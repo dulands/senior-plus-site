@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-# A linha Sitemap será adicionada pelo build quando PUBLIC_SITE_URL estiver definido.
+# O build adiciona a URL do sitemap somente quando PUBLIC_SITE_URL estiver definido.

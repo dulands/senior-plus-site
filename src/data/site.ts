@@ -85,18 +85,28 @@ export const services: Service[] = [
     shortDescription: 'Com enfermeira gerontóloga experiente',
     icon: 'stethoscope',
     featuredOnHome: true,
+    subtitle: 'com Enfermeira Gerontóloga',
+    description:
+      'Avaliação completa e planejamento personalizado de cuidados por profissional com pós-graduação em Gerontologia.',
+    items: ['Avaliação geriátrica', 'Plano de cuidados', 'Orientação familiar', 'Acompanhamento contínuo'],
   },
   {
     title: 'Acompanhamento Integral',
     shortDescription: 'Hospitalar, domiciliar ou casas de repouso',
     icon: 'home-heart',
     featuredOnHome: true,
+    subtitle: 'Hospitalar, Domiciliar ou Casas de Repouso',
+    description: 'Cuidado integral no conforto do lar, hospital ou casa de repouso.',
+    items: ['Cuidado 24h disponível', 'Assistência personalizada', 'Monitoramento constante', 'Suporte familiar'],
   },
   {
     title: 'Procedimentos de Enfermagem',
     shortDescription: 'Profissionais qualificados',
     icon: 'heart',
     featuredOnHome: true,
+    subtitle: 'Profissionais Qualificados',
+    description: 'Realizados por enfermeiros e técnicos certificados e experientes.',
+    items: ['Administração de medicamentos', 'Curativos especializados', 'Sondagem', 'Coleta de exames'],
   },
   {
     title: 'Suporte em Eventos e Viagens',
@@ -104,12 +114,18 @@ export const services: Service[] = [
       'Acompanhamento para que a pessoa cuidada participe de momentos especiais.',
     icon: 'calendar',
     featuredOnHome: false,
+    subtitle: 'Conforto em Qualquer Lugar',
+    description: 'Acompanhamento profissional garantindo segurança e tranquilidade fora de casa.',
+    items: ['Viagens nacionais', 'Eventos familiares', 'Planejamento antecipado', 'Medicação controlada'],
   },
   {
     title: 'Planos Flexíveis',
     shortDescription: 'Mensais, semanais ou temporários',
     icon: 'sparkles',
     featuredOnHome: true,
+    subtitle: 'Sob Medida para Você',
+    description: 'Mensais, semanais, finais de semana ou temporários conforme sua necessidade.',
+    items: ['Contratos flexíveis', 'Sem burocracia', 'Adaptável à rotina', 'Cancelamento facilitado'],
   },
   {
     title: 'Horários Adaptáveis',
@@ -117,6 +133,9 @@ export const services: Service[] = [
       'Atendimento planejado de acordo com a rotina e a necessidade da família.',
     icon: 'clock',
     featuredOnHome: false,
+    subtitle: '6h, 8h, 12h ou 24h',
+    description: 'Escalas de trabalho ajustadas conforme a necessidade de cuidado.',
+    items: ['Turnos personalizados', 'Revezamento organizado', 'Cobertura completa', 'Plantões especiais'],
   },
 ];
 
@@ -159,8 +178,91 @@ export const metrics = [
   { value: '5.0', label: 'Avaliação Média' },
 ] as const;
 
-/** Confirmados; serão usados na página Avaliações em uma etapa posterior. */
-export const testimonials: Testimonial[] = [];
+export const testimonials: Testimonial[] = [
+  {
+    name: 'Maria Santos',
+    relationship: 'Filha de paciente',
+    neighborhood: 'Jardins, São Paulo - SP',
+    quote: 'A Sênior Plus mudou nossa vida! A Annie e toda equipe cuidam da minha mãe com tanto carinho e profissionalismo. Fico muito mais tranquila sabendo que ela está em boas mãos. O grupo de WhatsApp facilita muito a comunicação.',
+    rating: 5,
+  },
+  {
+    name: 'Carlos Oliveira',
+    relationship: 'Filho de paciente',
+    neighborhood: 'Moema, São Paulo - SP',
+    quote: 'Excelente serviço! Os cuidadores são muito atenciosos e a enfermeira Annie acompanha tudo de perto. Meu pai está muito mais feliz e bem cuidado. Recomendo de olhos fechados!',
+    rating: 5,
+  },
+  {
+    name: 'Ana Paula Lima',
+    relationship: 'Neta de paciente',
+    neighborhood: 'Vila Mariana, São Paulo - SP',
+    quote: 'Profissionais incríveis! A equipe é pontual, carinhosa e muito competente. Minha avó adora a cuidadora e notamos uma melhora significativa na qualidade de vida dela. Gratidão à toda equipe!',
+    rating: 5,
+  },
+  {
+    name: 'Roberto Ferreira',
+    relationship: 'Marido de paciente',
+    neighborhood: 'Pinheiros, São Paulo - SP',
+    quote: 'Contratar a Sênior Plus foi a melhor decisão. A comunicação é transparente, os profissionais são bem treinados e o atendimento é humanizado. Minha esposa recebe os melhores cuidados possíveis.',
+    rating: 5,
+  },
+  {
+    name: 'Juliana Costa',
+    relationship: 'Filha de paciente',
+    neighborhood: 'Perdizes, São Paulo - SP',
+    quote: 'Que alívio encontrar uma empresa tão séria e dedicada! A Annie é extremamente competente e atenciosa. Os cuidadores são selecionados com muito critério. Meu pai está muito bem assistido. Super recomendo!',
+    rating: 5,
+  },
+  {
+    name: 'Fernando Alves',
+    relationship: 'Filho de paciente',
+    neighborhood: 'Itaim Bibi, São Paulo - SP',
+    quote: 'Serviço de primeira qualidade! A flexibilidade nos horários e a atenção personalizada fazem toda diferença. A equipe se tornou parte da família. Obrigado Sênior Plus por cuidarem tão bem da minha mãe!',
+    rating: 5,
+  },
+  {
+    name: 'Patricia Rodrigues',
+    relationship: 'Filha de paciente',
+    neighborhood: 'Vila Olímpia, São Paulo - SP',
+    quote: 'Profissionais excepcionais! A dedicação e o carinho com que tratam os idosos é admirável. A comunicação pelo WhatsApp nos mantém sempre informados. Sentimos que nosso pai está em uma segunda família.',
+    rating: 5,
+  },
+  {
+    name: 'Eduardo Mendes',
+    relationship: 'Filho de paciente',
+    neighborhood: 'Higienópolis, São Paulo - SP',
+    quote: 'Impossível não recomendar! A Sênior Plus superou todas as expectativas. Desde a consultoria inicial até o cuidado diário, tudo é feito com muita competência e humanização. Parabéns à toda equipe!',
+    rating: 5,
+  },
+];
+
+export const pageMetadata = {
+  about: {
+    title: 'Sobre a Sênior Plus | História, missão e valores',
+    description: 'Conheça a história, a missão, os valores e os diferenciais da Sênior Plus no cuidado humanizado a idosos em São Paulo.',
+  },
+  services: {
+    title: 'Serviços de cuidados para idosos | Sênior Plus São Paulo',
+    description: 'Conheça os serviços, planos flexíveis e processo de seleção da Sênior Plus para cuidados humanizados em São Paulo.',
+  },
+  team: {
+    title: 'Nossa Equipe | Enfermeiros, técnicos e cuidadores | Sênior Plus',
+    description: 'Conheça a equipe multidisciplinar da Sênior Plus e a supervisão de Annie Uno no atendimento a idosos em São Paulo.',
+  },
+  reviews: {
+    title: 'Avaliações e depoimentos | Sênior Plus São Paulo',
+    description: 'Leia oito depoimentos reais de famílias atendidas pela Sênior Plus e conheça nossos indicadores confirmados.',
+  },
+  contact: {
+    title: 'Contato | WhatsApp e telefone | Sênior Plus São Paulo',
+    description: 'Fale com Annie Uno ou Fabiano sobre cuidados para idosos em São Paulo. Atendimento 24 horas, todos os dias.',
+  },
+  careers: {
+    title: 'Trabalhe Conosco | Sênior Plus São Paulo',
+    description: 'Conheça oportunidades para enfermeiros, técnicos de enfermagem e cuidadores de idosos na Sênior Plus.',
+  },
+} as const;
 
 export const homeMetadata = {
   title: 'Sênior Plus | Cuidados com idosos em São Paulo',

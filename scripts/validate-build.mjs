@@ -34,10 +34,10 @@ for (const file of htmlFiles) {
     errors.push(`${file}: link aninhado em button`);
   }
 
-  const isHome = file === resolve(dist, 'index.html');
+  const isNotFound = file === resolve(dist, '404.html');
   const hasNoindex = /<meta name="robots" content="noindex, nofollow">/.test(html);
-  if (isHome && hasNoindex) errors.push(`${file}: Home não pode usar noindex`);
-  if (!isHome && !hasNoindex) errors.push(`${file}: stub sem noindex`);
+  if (!isNotFound && hasNoindex) errors.push(`${file}: página pública não pode usar noindex`);
+  if (isNotFound && !hasNoindex) errors.push(`${file}: página 404 deve usar noindex`);
 
   const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]);
   for (const href of hrefs) {
@@ -62,6 +62,7 @@ const combined = (
 const forbidden = [
   'seniorplus.base44.app',
   'base44-prod',
+  'images.unsplash.com',
   '<iframe',
   'googletagmanager.com',
   'google-analytics.com',

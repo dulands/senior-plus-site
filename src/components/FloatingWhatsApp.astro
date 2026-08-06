@@ -17,3 +17,20 @@ import BrandIcon from './BrandIcon.astro';
 >
   <BrandIcon name="whatsapp" size={32} />
 </a>
+
+<script>
+  const initializeFloatingWhatsApp = () => {
+    const button = document.querySelector<HTMLElement>('.floating-whatsapp');
+    const form = document.querySelector<HTMLElement>('[data-contact-form]');
+    if (!button || !form || button.dataset.overlapReady === 'true') return;
+    button.dataset.overlapReady = 'true';
+
+    const observer = new IntersectionObserver(([entry]) => {
+      button.dataset.formOverlap = String(Boolean(entry?.isIntersecting));
+    }, { threshold: 0.08 });
+    observer.observe(form);
+  };
+
+  initializeFloatingWhatsApp();
+  document.addEventListener('astro:page-load', initializeFloatingWhatsApp);
+</script>

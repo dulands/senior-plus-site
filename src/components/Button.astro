@@ -1,17 +1,17 @@
 ---
 interface Props {
-  href?: string;
+  href?: string | undefined;
   variant?: 'primary' | 'secondary' | 'light' | 'ghost';
   size?: 'default' | 'large';
-  class?: string;
-  target?: '_blank';
-  rel?: string;
+  class?: string | undefined;
+  target?: '_blank' | undefined;
+  rel?: string | undefined;
   type?: 'button' | 'submit';
-  ariaLabel?: string;
-  dataEvent?: string;
-  dataContact?: string;
-  dataLocation?: string;
-  dataCta?: string;
+  ariaLabel?: string | undefined;
+  dataEvent?: string | undefined;
+  dataContact?: string | undefined;
+  dataLocation?: string | undefined;
+  dataCta?: string | undefined;
 }
 
 const {

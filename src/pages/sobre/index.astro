@@ -1,4 +1,60 @@
 ---
-import StubPage from '../../components/StubPage.astro';
+import Icon from '../../components/Icon.astro';
+import InternalHero from '../../components/InternalHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import { aboutDifferentials, aboutValues } from '../../data/pages';
+import { pageMetadata } from '../../data/site';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const meta = pageMetadata.about;
+const structuredData = { '@context': 'https://schema.org', '@type': 'AboutPage', name: meta.title, description: meta.description, inLanguage: 'pt-BR' };
 ---
-<StubPage title="Sobre" />
+
+<BaseLayout title={meta.title} description={meta.description} image="/images/og-senior-plus.jpg" structuredData={structuredData}>
+  <InternalHero title="Nossa História" lead="Nascemos da paixão pelo cuidado humanizado e do compromisso com a qualidade de vida dos idosos em São Paulo - SP" />
+
+  <section class="section page-section" aria-label="Missão e visão">
+    <div class="container two-card-grid">
+      <article class="statement-card">
+        <span class="card-icon"><Icon name="target" size={32} /></span>
+        <h2>Nossa Missão</h2>
+        <p>Oferecer cuidados domiciliares humanizados e de alta qualidade aos idosos, respeitando suas individualidades e promovendo seu bem-estar físico, emocional e social.</p>
+      </article>
+      <article class="statement-card">
+        <span class="card-icon"><Icon name="sparkles" size={32} /></span>
+        <h2>Nossa Visão</h2>
+        <p>Ser a principal referência em cuidados domiciliares humanizados para idosos, reconhecida por nosso compromisso com a qualidade de vida, respeito e dignidade de nossos clientes em São Paulo - SP.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section page-section page-section--soft" aria-labelledby="valores-title">
+    <div class="container">
+      <SectionHeading id="valores-title" kicker="Nossos Princípios" title="Valores que nos Guiam" description="Princípios fundamentais que norteiam cada decisão e ação na Sênior Plus" />
+      <div class="values-grid">
+        {aboutValues.map((value, index) => (
+          <article class:list={['content-card', index === 0 && 'content-card--featured']}>
+            <span class="card-icon"><Icon name={value.icon} size={29} /></span>
+            <h3>{value.title}</h3>
+            <p>{value.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section page-section" aria-labelledby="diferenciais-title">
+    <div class="container">
+      <SectionHeading id="diferenciais-title" title="Nossos Diferenciais" description="O que torna a Sênior Plus única em São Paulo - SP" />
+      <div class="three-card-grid">
+        {aboutDifferentials.map((item) => (
+          <article class="content-card content-card--centered">
+            <span class="card-icon"><Icon name={item.icon} size={30} /></span>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

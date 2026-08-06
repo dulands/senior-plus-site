@@ -1,0 +1,90 @@
+---
+import { contacts } from '../data/site';
+import { eventNames } from '../lib/events';
+import BrandIcon from './BrandIcon.astro';
+---
+
+<form class="contact-form" data-contact-form data-whatsapp-number={contacts.annie.whatsappNumber} novalidate>
+  <div class="form-field">
+    <label for="contact-name">Nome Completo <span aria-hidden="true">*</span></label>
+    <input id="contact-name" name="name" type="text" autocomplete="name" required minlength="2" placeholder="Seu nome" />
+  </div>
+  <div class="form-field">
+    <label for="contact-email">Email <span aria-hidden="true">*</span></label>
+    <input id="contact-email" name="email" type="email" autocomplete="email" required placeholder="seu@email.com" />
+  </div>
+  <div class="form-field">
+    <label for="contact-phone">Telefone <span aria-hidden="true">*</span></label>
+    <input id="contact-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(11) 99999-9999" />
+  </div>
+  <div class="form-field">
+    <label for="contact-message">Mensagem <span aria-hidden="true">*</span></label>
+    <textarea id="contact-message" name="message" required minlength="5" placeholder="Conte-nos como podemos ajudar..."></textarea>
+  </div>
+  <button
+    class="button button--primary button--large contact-form__submit"
+    type="submit"
+    data-submit-event={eventNames.contactWhatsAppSubmit}
+    data-contact="annie"
+    data-location="contact-form"
+    data-cta="send-whatsapp"
+  >
+    <BrandIcon name="whatsapp" size={22} /> Enviar via WhatsApp
+  </button>
+  <p class="form-status" data-form-status aria-live="polite"></p>
+</form>
+
+<script>
+  const initializeContactForm = () => {
+    const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+    if (!form || form.dataset.ready === 'true') return;
+    form.dataset.ready = 'true';
+
+    const phone = form.elements.namedItem('phone') as HTMLInputElement;
+    const status = form.querySelector<HTMLElement>('[data-form-status]');
+
+    phone.addEventListener('input', () => phone.setCustomValidity(''));
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const digits = phone.value.replace(/\D/g, '');
+      if (digits.length < 10 || digits.length > 11) {
+        phone.setCustomValidity('Informe um telefone com DDD.');
+        phone.reportValidity();
+        return;
+      }
+      phone.setCustomValidity('');
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      const message = [
+        'Olá, Annie! Gostaria de entrar em contato com a Sênior Plus.',
+        '',
+        `Nome: ${String(data.get('name') || '').trim()}`,
+        `Email: ${String(data.get('email') || '').trim()}`,
+        `Telefone: ${phone.value.trim()}`,
+        `Mensagem: ${String(data.get('message') || '').trim()}`,
+      ].join('\n');
+      const number = form.dataset.whatsappNumber;
+      const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+      const submitter = form.querySelector<HTMLElement>('[data-submit-event]');
+      const eventName = submitter?.dataset.submitEvent;
+      const eventLayer = (window as typeof window & {
+        SeniorPlusEvents?: { track: (name: string, metadata: Record<string, string>) => boolean };
+      }).SeniorPlusEvents;
+      if (eventName) {
+        eventLayer?.track(eventName, {
+          contact: 'annie',
+          location: 'contact-form',
+          cta: 'send-whatsapp',
+        });
+      }
+
+      if (status) status.textContent = 'Redirecionando para o WhatsApp. A mensagem ainda precisa ser enviada por lá.';
+      window.location.assign(url);
+    });
+  };
+
+  initializeContactForm();
+  document.addEventListener('astro:page-load', initializeContactForm);
+</script>

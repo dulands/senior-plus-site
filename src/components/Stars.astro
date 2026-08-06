@@ -1,0 +1,13 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  label?: string;
+}
+
+const { label = 'Avaliação: cinco de cinco estrelas' } = Astro.props;
+---
+
+<span class="rating-stars" role="img" aria-label={label}>
+  {Array.from({ length: 5 }).map(() => <Icon name="star" size={18} />)}
+</span>

@@ -1,8 +1,8 @@
 # Sênior Plus
 
-Recriação independente do site institucional da Sênior Plus. Esta etapa contém a
-estrutura estática em Astro e a Home; as páginas internas permanecem como stubs
-marcados com `noindex`.
+Recriação independente do site institucional da Sênior Plus. O projeto contém a
+Home e as páginas Sobre, Serviços, Nossa Equipe, Avaliações, Contato e Carreiras,
+geradas estaticamente com Astro.
 
 ## Desenvolvimento local
 
@@ -28,9 +28,8 @@ A URL pública deve ser definida no futuro por `PUBLIC_SITE_URL`, conforme
 - o arquivo `robots.txt` não anuncia uma URL de sitemap inventada;
 - `scripts/generate-sitemap.mjs` não cria o sitemap.
 
-Quando `PUBLIC_SITE_URL` estiver configurada, o build gera `dist/sitemap.xml` somente
-com a Home, a única página finalizada nesta etapa. Os stubs internos não entram no
-sitemap e usam `noindex, nofollow`.
+Quando `PUBLIC_SITE_URL` estiver configurada, o build gera `dist/sitemap.xml` com as
+sete páginas públicas. A página 404 usa `noindex` e não entra no sitemap.
 
 ## Área futura “Guias”
 
@@ -64,8 +63,8 @@ ser revisada. O consentimento e o tratamento de dados deverão ser avaliados na 
 de publicação. Atualmente nenhuma tag de rastreamento está ativa; os contatos abrem o
 WhatsApp diretamente e o site não armazena mensagens.
 
-## Conteúdo futuro
+## Formulário e Carreiras
 
-As rotas Sobre, Serviços, Nossa Equipe, Avaliações, Contato e Carreiras são stubs de
-desenvolvimento. Elas não representam páginas concluídas. O link externo do Google
-Form de Carreiras será mantido sem alterações quando essa página for implementada.
+O formulário de contato valida os campos no navegador e abre o WhatsApp de Annie
+com a mensagem codificada. Nenhum dado é armazenado ou enviado a um backend. A
+página Carreiras mantém o Google Form original, inclusive sua autenticação externa.

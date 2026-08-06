@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import internalImage from '../assets/images/internal-care.jpg';
+import type { IconName } from '../types/site';
+import Button from './Button.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+  title: string;
+  lead: string;
+  icon?: IconName;
+  ctaLabel?: string;
+  ctaHref?: string;
+  ctaEvent?: string;
+  ctaLocation?: string;
+}
+
+const { title, lead, icon, ctaLabel, ctaHref, ctaEvent, ctaLocation } = Astro.props;
+---
+
+<section class="internal-hero">
+  <div class="internal-hero__background" aria-hidden="true">
+    <Image
+      src={internalImage}
+      alt=""
+      widths={[768, 1280, 1920]}
+      sizes="100vw"
+      format="webp"
+      quality={78}
+      loading="eager"
+    />
+  </div>
+  <div class="container internal-hero__content">
+    {icon && <span class="internal-hero__icon"><Icon name={icon} size={58} strokeWidth={1.65} /></span>}
+    <h1>{title}</h1>
+    <p>{lead}</p>
+    {ctaHref && ctaLabel && (
+      <Button
+        href={ctaHref}
+        variant="light"
+        size="large"
+        target="_blank"
+        rel="noopener noreferrer"
+        dataEvent={ctaEvent}
+        dataLocation={ctaLocation}
+      >
+        {ctaLabel} <Icon name="arrow-right" size={19} />
+      </Button>
+    )}
+  </div>
+</section>

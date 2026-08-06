@@ -1049,6 +1049,13 @@ h3 {
   transition: color 160ms ease;
 }
 
+.footer-links a,
+.footer-contact a {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+}
+
 .footer-links a:hover,
 .footer-contact a:hover,
 .social-link:hover {
@@ -1404,6 +1411,12 @@ h3 {
     bottom: 16px;
     width: 54px;
     height: 54px;
+  }
+
+  .floating-whatsapp[data-form-overlap='true'] {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
   }
 
   body {

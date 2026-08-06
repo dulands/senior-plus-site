@@ -38,6 +38,12 @@ de supervisão autorizado passa a ser:
 
 O escopo aprovado para a próxima implementação é somente a estrutura técnica, componentes compartilhados e Home completa. As páginas internas poderão existir apenas como stubs `noindex`, fora do sitemap. A área futura “Guias” receberá apenas tipos, dados desativados e documentação, sem rota pública nem item de menu.
 
+### Atualização de implementação — páginas internas
+
+Em uma etapa posterior, foi aprovada a substituição dos stubs pelas seis páginas
+internas completas já levantadas neste plano. A área “Guias” continua desativada e
+sem rotas públicas; não houve publicação, analytics ou integração externa adicional.
+
 ## 2. Cobertura da análise
 
 Foram acessadas e inspecionadas estas rotas públicas:

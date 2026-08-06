@@ -1,4 +1,80 @@
 ---
-import StubPage from '../../components/StubPage.astro';
+import { Image } from 'astro:assets';
+import annieImage from '../../assets/images/annie-uno.png';
+import caregiversImage from '../../assets/images/team-caregivers.jpg';
+import nursesImage from '../../assets/images/team-nurses.jpg';
+import techniciansImage from '../../assets/images/team-technicians.jpg';
+import Icon from '../../components/Icon.astro';
+import InternalHero from '../../components/InternalHero.astro';
+import PageCTA from '../../components/PageCTA.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import { supervisionBenefits, teamDifferentials, teamRoles } from '../../data/pages';
+import { founder, pageMetadata } from '../../data/site';
+import { eventNames } from '../../lib/events';
+import { buildWhatsAppUrl } from '../../lib/whatsapp';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const meta = pageMetadata.team;
+const teamImages = { nurses: nursesImage, technicians: techniciansImage, caregivers: caregiversImage } as const;
+const structuredData = { '@context': 'https://schema.org', '@type': 'WebPage', name: meta.title, description: meta.description, inLanguage: 'pt-BR' };
 ---
-<StubPage title="Nossa Equipe" />
+
+<BaseLayout title={meta.title} description={meta.description} image="/images/og-senior-plus.jpg" structuredData={structuredData}>
+  <InternalHero title="Nossa Equipe" lead="Profissionais qualificados, certificados e apaixonados pelo cuidado humanizado em São Paulo - SP" />
+
+  <section class="section page-section" aria-labelledby="equipe-title">
+    <div class="container">
+      <SectionHeading id="equipe-title" kicker="Nossos Profissionais" title="Equipe Multidisciplinar" description="Diferentes especialidades trabalhando juntas para o cuidado completo" />
+      <div class="team-list">
+        {teamRoles.map((role, index) => (
+          <article class:list={['team-role', index % 2 === 1 && 'team-role--reverse']}>
+            <div class="team-role__image">
+              <Image src={teamImages[role.image]} alt={role.title} widths={[560, 800, 1200]} sizes="(max-width: 900px) 100vw, 50vw" format="webp" quality={82} loading="lazy" />
+            </div>
+            <div>
+              <h3>{role.title}</h3>
+              <p>{role.description}</p>
+              <strong>Responsabilidades:</strong>
+              <ul class="compact-check-list compact-check-list--large">
+                {role.responsibilities.map((item) => <li><Icon name="check" size={18} /> {item}</li>)}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section page-section page-section--soft" aria-labelledby="equipe-diferenciais-title">
+    <div class="container">
+      <SectionHeading id="equipe-diferenciais-title" title="Por que nossa equipe é diferente?" description="Garantias que oferecemos em cada atendimento" />
+      <div class="three-card-grid">
+        {teamDifferentials.map((item) => (
+          <article class="content-card content-card--centered">
+            <span class="card-icon"><Icon name={item.icon} size={30} /></span>
+            <h3>{item.title}</h3><p>{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section page-section leadership-section" aria-labelledby="supervisao-title">
+    <div class="container media-section">
+      <div class="media-section__image media-section__image--portrait">
+        <Image src={annieImage} alt="Annie Uno, liderança e supervisão da Sênior Plus" widths={[480, 640, 737]} sizes="(max-width: 900px) 100vw, 45vw" format="webp" quality={84} loading="lazy" />
+      </div>
+      <div>
+        <span class="section-kicker">Liderança & Coordenação</span>
+        <h2 id="supervisao-title">Supervisão de Annie Uno</h2>
+        {founder.supervisionText.split(' Esta coordenação').map((part, index) => <p>{index === 0 ? part : `Esta coordenação${part}`}</p>)}
+        <h3>Benefícios da supervisão:</h3>
+        <ul class="compact-check-list compact-check-list--large">
+          {supervisionBenefits.map((item) => <li><Icon name="check" size={18} /> {item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <PageCTA title="Conheça nossa equipe pessoalmente" description="Entre em contato para uma avaliação sem compromisso" label="Agendar Avaliação Gratuita" href={buildWhatsAppUrl('annie', 'evaluation')} event={eventNames.whatsappAnnieClick} contact="annie" location="team" />
+</BaseLayout>

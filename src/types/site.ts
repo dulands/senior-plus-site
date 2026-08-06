@@ -19,6 +19,9 @@ export interface Service {
   shortDescription: string;
   icon: IconName;
   featuredOnHome: boolean;
+  subtitle?: string;
+  description?: string;
+  items?: string[];
 }
 
 export interface Benefit {
@@ -29,6 +32,7 @@ export interface Benefit {
 
 export interface Testimonial {
   name: string;
+  relationship: string;
   neighborhood: string;
   quote: string;
   rating: 5;
@@ -38,21 +42,32 @@ export type IconName =
   | 'arrow-right'
   | 'award'
   | 'badge-check'
+  | 'briefcase'
+  | 'clipboard-check'
   | 'calendar'
   | 'check'
   | 'clock'
   | 'heart'
+  | 'hand-heart'
   | 'home-heart'
   | 'instagram'
+  | 'mail'
   | 'map-pin'
+  | 'message-circle'
   | 'menu'
   | 'moon'
   | 'phone'
+  | 'plane'
+  | 'quote'
+  | 'search'
+  | 'send'
   | 'shield-check'
   | 'sparkles'
   | 'star'
   | 'stethoscope'
   | 'sun'
+  | 'target'
+  | 'trophy'
   | 'user-check'
   | 'users'
   | 'x';

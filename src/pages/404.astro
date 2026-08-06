@@ -1,0 +1,14 @@
+---
+import Button from '../components/Button.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Página não encontrada | Sênior Plus" description="A página solicitada não foi encontrada." noindex>
+  <section class="not-found">
+    <div class="container not-found__inner">
+      <span>Erro 404</span><h1>Página não encontrada</h1>
+      <p>O endereço pode ter mudado ou não existir. Você pode voltar para a página inicial.</p>
+      <Button href="/" size="large">Voltar ao início</Button>
+    </div>
+  </section>
+</BaseLayout>

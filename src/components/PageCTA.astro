@@ -1,0 +1,39 @@
+---
+import Button from './Button.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  label: string;
+  href: string;
+  event?: string;
+  contact?: string;
+  location: string;
+  note?: string;
+  external?: boolean;
+}
+
+const { title, description, label, href, event, contact, location, note, external = true } = Astro.props;
+---
+
+<section class="page-cta" aria-labelledby={`${location}-cta-title`}>
+  <div class="container page-cta__inner">
+    <h2 id={`${location}-cta-title`}>{title}</h2>
+    <p>{description}</p>
+    <Button
+      href={href}
+      variant="light"
+      size="large"
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
+      dataEvent={event}
+      dataContact={contact}
+      dataLocation={location}
+      dataCta="primary"
+    >
+      {label} <Icon name="arrow-right" size={19} />
+    </Button>
+    {note && <small>{note}</small>}
+  </div>
+</section>

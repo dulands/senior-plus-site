@@ -1,4 +1,57 @@
 ---
-import StubPage from '../../components/StubPage.astro';
+import { Image } from 'astro:assets';
+import careersImage from '../../assets/images/careers-team.jpg';
+import Button from '../../components/Button.astro';
+import Icon from '../../components/Icon.astro';
+import InternalHero from '../../components/InternalHero.astro';
+import PageCTA from '../../components/PageCTA.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import { careerProcess, careerRoles, careersBenefits, careersFormUrl } from '../../data/pages';
+import { pageMetadata } from '../../data/site';
+import { eventNames } from '../../lib/events';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const meta = pageMetadata.careers;
+const structuredData = { '@context': 'https://schema.org', '@type': 'WebPage', name: meta.title, description: meta.description, inLanguage: 'pt-BR' };
 ---
-<StubPage title="Carreiras" />
+
+<BaseLayout title={meta.title} description={meta.description} image="/images/og-senior-plus.jpg" structuredData={structuredData}>
+  <InternalHero icon="briefcase" title="Trabalhe Conosco" lead="Junte-se à equipe Sênior Plus e faça parte de uma empresa que valoriza o cuidado humanizado em São Paulo - SP" ctaLabel="Candidatar-se Agora" ctaHref={careersFormUrl} ctaEvent={eventNames.careersFormClick} ctaLocation="careers-hero" />
+
+  <section class="section page-section page-section--soft" aria-labelledby="beneficios-carreira-title">
+    <div class="container">
+      <SectionHeading id="beneficios-carreira-title" kicker="Por que trabalhar conosco" title="Benefícios de fazer parte do time" description="Oferecemos um ambiente de trabalho que valoriza você e seu desenvolvimento" />
+      <div class="three-card-grid careers-benefits-grid">
+        {careersBenefits.map((item) => <article class="content-card"><span class="card-icon"><Icon name={item.icon} size={29} /></span><h3>{item.title}</h3><p>{item.description}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section page-section" aria-labelledby="oportunidades-title">
+    <div class="container">
+      <SectionHeading id="oportunidades-title" kicker="Vagas Abertas" title="Oportunidades Disponíveis" description="Confira as posições e requisitos para fazer parte do nosso time" />
+      <div class="three-card-grid job-grid">
+        {careerRoles.map((role) => (
+          <article class="job-card">
+            <span class="card-icon"><Icon name="briefcase" size={29} /></span><h3>{role.title}</h3><strong>Requisitos:</strong>
+            <ul class="compact-check-list">{role.requirements.map((item) => <li><Icon name="check" size={17} /> {item}</li>)}</ul>
+          </article>
+        ))}
+      </div>
+      <div class="section-action"><Button href={careersFormUrl} target="_blank" rel="noopener noreferrer" size="large" dataEvent={eventNames.careersFormClick} dataLocation="careers-jobs" dataCta="send-resume">Enviar Currículo</Button></div>
+    </div>
+  </section>
+
+  <section class="section page-section page-section--soft" aria-labelledby="processo-carreira-title">
+    <div class="container career-process-layout">
+      <div class="career-process-image"><Image src={careersImage} alt="Equipe reunida durante processo seletivo" widths={[560, 800, 1200]} sizes="(max-width: 900px) 100vw, 50vw" format="webp" quality={82} loading="lazy" /></div>
+      <div>
+        <span class="section-kicker">Como funciona</span><h2 id="processo-carreira-title">Processo Seletivo</h2>
+        <p>Nosso processo de seleção é rigoroso e criterioso, garantindo que apenas os melhores profissionais façam parte da equipe Sênior Plus.</p>
+        <ol class="career-steps">{careerProcess.map((step, index) => <li><span>{index + 1}</span><p>{step}</p></li>)}</ol>
+      </div>
+    </div>
+  </section>
+
+  <PageCTA title="Pronto para dar o próximo passo?" description="Envie seu currículo agora e faça parte da melhor equipe de cuidados domiciliares de São Paulo - SP" label="Candidatar-se Agora" href={careersFormUrl} event={eventNames.careersFormClick} location="careers" note="Responderemos todas as candidaturas em até 48 horas" />
+</BaseLayout>

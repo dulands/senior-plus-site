@@ -49,7 +49,7 @@ Nenhum PDF completo, preço ou link de checkout foi incluído nesta etapa.
 
 Os nomes estáveis ficam em `src/lib/events.ts`; os CTAs usam `data-event`,
 `data-contact`, `data-location` e `data-cta`. A camada local em
-`public/scripts/events.js` está explicitamente desativada e não envia dados. Ela não
+`src/scripts/events.js` está explicitamente desativada e não envia dados. Ela não
 coleta nome, telefone digitado, mensagem ou qualquer dado pessoal.
 
 Uma ferramenta de analytics só deverá ser conectada após aprovação dos IDs, revisão

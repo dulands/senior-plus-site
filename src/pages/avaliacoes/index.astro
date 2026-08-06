@@ -10,6 +10,7 @@ import { buildWhatsAppUrl } from '../../lib/whatsapp';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const meta = pageMetadata.reviews;
+const metricIcons = ['heart', 'thumbs-up', 'star'] as const;
 const structuredData = { '@context': 'https://schema.org', '@type': 'WebPage', name: meta.title, description: meta.description, inLanguage: 'pt-BR' };
 ---
 
@@ -18,9 +19,9 @@ const structuredData = { '@context': 'https://schema.org', '@type': 'WebPage', n
 
   <section class="section page-section metrics-section" aria-label="Indicadores confirmados">
     <div class="container metrics-grid">
-      {metrics.map((metric) => (
+      {metrics.map((metric, index) => (
         <article class="metric-card">
-          {metric.value === '5.0' && <Stars />}
+          <span class="metric-card__icon"><Icon name={metricIcons[index] ?? 'star'} size={28} /></span>
           <strong>{metric.value}</strong><span>{metric.label}</span>
         </article>
       ))}
@@ -33,13 +34,17 @@ const structuredData = { '@context': 'https://schema.org', '@type': 'WebPage', n
       <div class="reviews-grid">
         {testimonials.map((testimonial) => (
           <article class="review-card">
-            <div class="review-card__top"><Stars /><Icon name="quote" size={30} /></div>
-            <blockquote>“{testimonial.quote}”</blockquote>
+            <span class="review-card__decoration" aria-hidden="true"></span>
+            <div class="review-card__content">
+              <Icon name="quote" size={40} class="review-card__quote" />
+              <Stars />
+              <blockquote>“{testimonial.quote}”</blockquote>
             <footer>
               <strong>{testimonial.name}</strong>
               <span>{testimonial.relationship}</span>
-              <small><Icon name="map-pin" size={15} /> {testimonial.neighborhood}</small>
+              <small>{testimonial.neighborhood}</small>
             </footer>
+            </div>
           </article>
         ))}
       </div>

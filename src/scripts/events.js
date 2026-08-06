@@ -25,7 +25,7 @@
   document.addEventListener('click', (event) => {
     const target = event.target instanceof Element ? event.target.closest('[data-event]') : null;
     if (!target) return;
-    track(target.getAttribute('data-event'), {
+    track(target.getAttribute('data-event') || '', {
       contact: target.getAttribute('data-contact') || '',
       location: target.getAttribute('data-location') || '',
       cta: target.getAttribute('data-cta') || '',

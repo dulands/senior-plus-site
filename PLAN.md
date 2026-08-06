@@ -22,7 +22,7 @@ Também foram confirmados:
 - indicadores 150+, 98%, nota 5.0 e cinco estrelas;
 - autenticidade e autorização dos oito depoimentos;
 - permanência do Google Form de carreiras e de sua autenticação atual;
-- inclusão do Instagram `@seniorplus.sp` no rodapé;
+- inclusão do Instagram `@seniorplussp` no rodapé;
 - contato comercial enviado diretamente ao WhatsApp, sem backend ou armazenamento.
 
 Correção posterior confirmada pela proprietária: toda menção profissional deve usar

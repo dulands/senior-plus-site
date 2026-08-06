@@ -5,6 +5,7 @@ import Button from '../../components/Button.astro';
 import Icon from '../../components/Icon.astro';
 import InternalHero from '../../components/InternalHero.astro';
 import PageCTA from '../../components/PageCTA.astro';
+import SectionEyebrow from '../../components/SectionEyebrow.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 import { careerProcess, careerRoles, careersBenefits, careersFormUrl } from '../../data/pages';
 import { pageMetadata } from '../../data/site';
@@ -18,7 +19,7 @@ const structuredData = { '@context': 'https://schema.org', '@type': 'WebPage', n
 <BaseLayout title={meta.title} description={meta.description} image="/images/og-senior-plus.jpg" structuredData={structuredData}>
   <InternalHero icon="briefcase" title="Trabalhe Conosco" lead="Junte-se à equipe Sênior Plus e faça parte de uma empresa que valoriza o cuidado humanizado em São Paulo - SP" ctaLabel="Candidatar-se Agora" ctaHref={careersFormUrl} ctaEvent={eventNames.careersFormClick} ctaLocation="careers-hero" />
 
-  <section class="section page-section page-section--soft" aria-labelledby="beneficios-carreira-title">
+  <section class="section page-section" aria-labelledby="beneficios-carreira-title">
     <div class="container">
       <SectionHeading id="beneficios-carreira-title" kicker="Por que trabalhar conosco" title="Benefícios de fazer parte do time" description="Oferecemos um ambiente de trabalho que valoriza você e seu desenvolvimento" />
       <div class="three-card-grid careers-benefits-grid">
@@ -27,7 +28,7 @@ const structuredData = { '@context': 'https://schema.org', '@type': 'WebPage', n
     </div>
   </section>
 
-  <section class="section page-section" aria-labelledby="oportunidades-title">
+  <section class="section page-section page-section--soft page-section--fade" aria-labelledby="oportunidades-title">
     <div class="container">
       <SectionHeading id="oportunidades-title" kicker="Vagas Abertas" title="Oportunidades Disponíveis" description="Confira as posições e requisitos para fazer parte do nosso time" />
       <div class="three-card-grid job-grid">
@@ -46,7 +47,7 @@ const structuredData = { '@context': 'https://schema.org', '@type': 'WebPage', n
     <div class="container career-process-layout">
       <div class="career-process-image"><Image src={careersImage} alt="Equipe reunida durante processo seletivo" widths={[560, 800, 1200]} sizes="(max-width: 900px) 100vw, 50vw" format="webp" quality={82} loading="lazy" /></div>
       <div>
-        <span class="section-kicker">Como funciona</span><h2 id="processo-carreira-title">Processo Seletivo</h2>
+        <SectionEyebrow text="Como funciona" /><h2 id="processo-carreira-title">Processo Seletivo</h2>
         <p>Nosso processo de seleção é rigoroso e criterioso, garantindo que apenas os melhores profissionais façam parte da equipe Sênior Plus.</p>
         <ol class="career-steps">{careerProcess.map((step, index) => <li><span>{index + 1}</span><p>{step}</p></li>)}</ol>
       </div>

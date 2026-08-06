@@ -13,7 +13,7 @@
   --charcoal-800: #2a2a2a;
   --charcoal-600: #6b7280;
   --white: #ffffff;
-  --page: #ffffff;
+  --page: #f5f5f4;
   --surface: #ffffff;
   --surface-soft: #fafaf9;
   --text: var(--charcoal-950);
@@ -158,8 +158,8 @@ h3 {
 .top-bar {
   color: #103b34;
   background: var(--mint-300);
-  font-size: 0.79rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
 :root[data-theme='dark'] .top-bar {
@@ -189,6 +189,11 @@ h3 {
 .top-bar a {
   gap: 7px;
   white-space: nowrap;
+}
+
+.top-bar a {
+  min-height: 44px;
+  margin-block: -4px;
 }
 
 .top-bar a:hover {
@@ -511,8 +516,7 @@ h3 {
   gap: 32px;
 }
 
-.eyebrow,
-.section-kicker {
+.eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -524,9 +528,33 @@ h3 {
   text-transform: uppercase;
 }
 
-.eyebrow--light,
+.eyebrow--light {
+  color: #fff;
+}
+
+.section-kicker,
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  color: var(--charcoal-800);
+  background: var(--mint-200);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+
+:root[data-theme='dark'] .section-kicker,
+:root[data-theme='dark'] .section-eyebrow {
+  color: #fff;
+  background: #167d7c;
+}
+
 .section-kicker--light {
   color: #fff;
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .eyebrow--light {
@@ -1080,14 +1108,26 @@ h3 {
 }
 
 .social-link {
-  width: 48px;
+  width: fit-content;
+  min-width: 48px;
   height: 48px;
+  padding-inline: 14px;
   align-items: center;
   justify-content: center;
   border: 1px solid #4a4a4a;
   border-radius: 12px;
   color: var(--mint-300);
   font-weight: 700;
+}
+
+.social-link:focus-visible {
+  border-color: var(--mint-300);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 180ms;
+  animation-timing-function: ease;
 }
 
 .site-footer__bottom {
@@ -1444,5 +1484,10 @@ h3 {
 
   .floating-whatsapp::after {
     animation: none;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.01ms !important;
   }
 }

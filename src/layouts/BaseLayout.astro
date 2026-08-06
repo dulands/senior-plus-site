@@ -1,4 +1,6 @@
 ---
+import { ClientRouter } from 'astro:transitions';
+import eventsScript from '../scripts/events.js?raw';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import SEO from '../components/SEO.astro';
@@ -47,6 +49,13 @@ const { title, description, image, noindex, structuredData } = Astro.props;
       noindex={noindex}
       structuredData={structuredData}
     />
+    <ClientRouter />
+    <script is:inline>
+      document.addEventListener('astro:before-swap', (event) => {
+        const currentTheme = document.documentElement.dataset.theme || 'light';
+        event.newDocument.documentElement.dataset.theme = currentTheme;
+      });
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
@@ -57,6 +66,6 @@ const { title, description, image, noindex, structuredData } = Astro.props;
     </main>
     <Footer />
     <FloatingWhatsApp />
-    <script is:inline src="/scripts/events.js"></script>
+    <script is:inline set:html={eventsScript}></script>
   </body>
 </html>

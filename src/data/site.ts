@@ -16,8 +16,8 @@ export const brand = {
   serviceArea: 'São Paulo, capital',
   availability:
     'Atendimento 24 horas por dia, 7 dias por semana, incluindo feriados.',
-  instagramHandle: '@seniorplus.sp',
-  instagramUrl: 'https://www.instagram.com/seniorplus.sp/',
+  instagramHandle: '@seniorplussp',
+  instagramUrl: 'https://www.instagram.com/seniorplussp/',
   siteUrl: '',
 } as const;
 

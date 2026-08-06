@@ -17,7 +17,7 @@ As confirmações abaixo foram fornecidas pela proprietária e substituem os blo
 - [x] Conteúdo profissional e texto de supervisão de Annie Uno autorizados.
 - [x] Indicadores `150+`, `98%`, `5.0` e cinco estrelas confirmados.
 - [x] Os oito depoimentos, nomes, textos e bairros foram confirmados como reais e autorizados.
-- [x] Instagram `@seniorplus.sp` confirmado para inclusão no rodapé.
+- [x] Instagram `@seniorplussp` confirmado para inclusão no rodapé.
 - [x] Redação profissional corrigida para “com pós-graduação em Gerontologia”; não
   usar “especialista em Gerontologia”.
 - [x] Disponibilidade confirmada na forma explícita: “Atendimento 24 horas por dia,

@@ -1,4 +1,6 @@
 ---
+import SectionEyebrow from './SectionEyebrow.astro';
+
 interface Props {
   kicker?: string;
   title: string;
@@ -11,7 +13,7 @@ const { kicker, title, description, id, centered = true } = Astro.props;
 ---
 
 <div class:list={['section-heading', centered && 'section-heading--center']}>
-  {kicker && <span class="section-kicker">{kicker}</span>}
+  {kicker && <SectionEyebrow text={kicker} />}
   <h2 id={id}>{title}</h2>
   {description && <p>{description}</p>}
 </div>

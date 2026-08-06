@@ -31,9 +31,9 @@ const structuredData = { '@context': 'https://schema.org', '@type': 'AboutPage',
   <section class="section page-section page-section--soft" aria-labelledby="valores-title">
     <div class="container">
       <SectionHeading id="valores-title" kicker="Nossos Princípios" title="Valores que nos Guiam" description="Princípios fundamentais que norteiam cada decisão e ação na Sênior Plus" />
-      <div class="values-grid">
+      <div class="values-pyramid">
         {aboutValues.map((value, index) => (
-          <article class:list={['content-card', index === 0 && 'content-card--featured']}>
+          <article class:list={['content-card', 'value-card', index === 0 && 'content-card--featured']}>
             <span class="card-icon"><Icon name={value.icon} size={29} /></span>
             <h3>{value.title}</h3>
             <p>{value.description}</p>

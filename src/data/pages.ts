@@ -8,18 +8,18 @@ interface CardItem {
 
 export const aboutValues: CardItem[] = [
   { title: 'Humanização', description: 'Cuidado centrado na pessoa, com empatia e respeito', icon: 'heart' },
-  { title: 'Empatia', description: 'Compreender e compartilhar os sentimentos de cada um', icon: 'hand-heart' },
-  { title: 'Respeito à Individualidade', description: 'Cada pessoa é única e merece atenção personalizada', icon: 'user-check' },
-  { title: 'Compromisso', description: 'Dedicação total à qualidade e segurança do cuidado', icon: 'badge-check' },
-  { title: 'Qualidade', description: 'Excelência em todos os serviços prestados', icon: 'trophy' },
-  { title: 'Transparência', description: 'Comunicação clara e honesta com familiares', icon: 'message-circle' },
-  { title: 'Responsabilidade Social', description: 'Compromisso com o bem-estar da comunidade', icon: 'users' },
+  { title: 'Empatia', description: 'Compreender e compartilhar os sentimentos de cada um', icon: 'smile' },
+  { title: 'Respeito à Individualidade', description: 'Cada pessoa é única e merece atenção personalizada', icon: 'users' },
+  { title: 'Compromisso', description: 'Dedicação total à qualidade e segurança do cuidado', icon: 'shield' },
+  { title: 'Qualidade', description: 'Excelência em todos os serviços prestados', icon: 'trending-up' },
+  { title: 'Transparência', description: 'Comunicação clara e honesta com familiares', icon: 'handshake' },
+  { title: 'Responsabilidade Social', description: 'Compromisso com o bem-estar da comunidade', icon: 'globe' },
 ];
 
 export const aboutDifferentials: CardItem[] = [
-  { title: 'Processo Seletivo Rigoroso', description: '6 etapas de seleção para garantir os melhores profissionais', icon: 'clipboard-check' },
-  { title: 'Comunicação Integrada', description: 'Grupos de WhatsApp com família e equipe para transparência total', icon: 'message-circle' },
-  { title: 'Especialização em Gerontologia', description: 'Conhecimento profundo sobre o cuidado especializado ao idoso', icon: 'stethoscope' },
+  { title: 'Processo Seletivo Rigoroso', description: '6 etapas de seleção para garantir os melhores profissionais', icon: 'lightbulb' },
+  { title: 'Comunicação Integrada', description: 'Grupos de WhatsApp com família e equipe para transparência total', icon: 'users' },
+  { title: 'Especialização em Gerontologia', description: 'Conhecimento profundo sobre o cuidado especializado ao idoso', icon: 'award' },
 ];
 
 export const selectionSteps = [
@@ -62,8 +62,8 @@ export const teamRoles = [
 
 export const teamDifferentials: CardItem[] = [
   { title: 'Disponibilidade 24/7', description: 'Equipe pronta para atender a qualquer hora, todos os dias', icon: 'clock' },
-  { title: 'Profissionais Certificados', description: 'Todos com formação reconhecida e experiência comprovada', icon: 'badge-check' },
-  { title: 'Supervisão Contínua', description: 'Coordenação por enfermeira experiente', icon: 'user-check' },
+  { title: 'Profissionais Certificados', description: 'Todos com formação reconhecida e experiência comprovada', icon: 'shield' },
+  { title: 'Supervisão Contínua', description: 'Coordenação por enfermeira experiente', icon: 'users' },
 ];
 
 export const supervisionBenefits = [

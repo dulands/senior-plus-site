@@ -7,6 +7,7 @@ import techniciansImage from '../../assets/images/team-technicians.jpg';
 import Icon from '../../components/Icon.astro';
 import InternalHero from '../../components/InternalHero.astro';
 import PageCTA from '../../components/PageCTA.astro';
+import SectionEyebrow from '../../components/SectionEyebrow.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 import { supervisionBenefits, teamDifferentials, teamRoles } from '../../data/pages';
 import { founder, pageMetadata } from '../../data/site';
@@ -16,6 +17,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const meta = pageMetadata.team;
 const teamImages = { nurses: nursesImage, technicians: techniciansImage, caregivers: caregiversImage } as const;
+const teamIcons = ['stethoscope', 'user-check', 'heart'] as const;
 const structuredData = { '@context': 'https://schema.org', '@type': 'WebPage', name: meta.title, description: meta.description, inLanguage: 'pt-BR' };
 ---
 
@@ -31,12 +33,15 @@ const structuredData = { '@context': 'https://schema.org', '@type': 'WebPage', n
             <div class="team-role__image">
               <Image src={teamImages[role.image]} alt={role.title} widths={[560, 800, 1200]} sizes="(max-width: 900px) 100vw, 50vw" format="webp" quality={82} loading="lazy" />
             </div>
-            <div>
-              <h3>{role.title}</h3>
+            <div class="team-role__content">
+              <div class="team-role__heading">
+                <span class="team-role__icon"><Icon name={teamIcons[index] ?? 'heart'} size={32} /></span>
+                <h3>{role.title}</h3>
+              </div>
               <p>{role.description}</p>
               <strong>Responsabilidades:</strong>
-              <ul class="compact-check-list compact-check-list--large">
-                {role.responsibilities.map((item) => <li><Icon name="check" size={18} /> {item}</li>)}
+              <ul class="role-responsibilities">
+                {role.responsibilities.map((item) => <li><span aria-hidden="true"><i></i></span>{item}</li>)}
               </ul>
             </div>
           </article>
@@ -65,13 +70,15 @@ const structuredData = { '@context': 'https://schema.org', '@type': 'WebPage', n
         <Image src={annieImage} alt="Annie Uno, liderança e supervisão da Sênior Plus" widths={[480, 640, 737]} sizes="(max-width: 900px) 100vw, 45vw" format="webp" quality={84} loading="lazy" />
       </div>
       <div>
-        <span class="section-kicker">Liderança & Coordenação</span>
+        <SectionEyebrow text="Liderança & Coordenação" />
         <h2 id="supervisao-title">Supervisão de Annie Uno</h2>
         {founder.supervisionText.split(' Esta coordenação').map((part, index) => <p>{index === 0 ? part : `Esta coordenação${part}`}</p>)}
-        <h3>Benefícios da supervisão:</h3>
-        <ul class="compact-check-list compact-check-list--large">
-          {supervisionBenefits.map((item) => <li><Icon name="check" size={18} /> {item}</li>)}
-        </ul>
+        <div class="supervision-benefits">
+          <h3>Benefícios da supervisão:</h3>
+          <ul>
+            {supervisionBenefits.map((item) => <li><Icon name="heart" size={20} /> {item}</li>)}
+          </ul>
+        </div>
       </div>
     </div>
   </section>

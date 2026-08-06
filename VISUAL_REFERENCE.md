@@ -2,6 +2,8 @@
 
 Inventário visual medido no site público em 6 de agosto de 2026. Valores são aproximações de implementação e deverão ser confirmados por comparação visual, não tratados como especificação de marca oficial.
 
+Atualização: a proprietária autorizou o uso local de todos os textos, fotografias, logotipo e ativos visuais presentes no site original. Na implementação, devem ser usadas as melhores resoluções públicas disponíveis, mantendo registrado quando um original de maior qualidade seria útil.
+
 ## 1. Direção visual
 
 A identidade atual combina assistência humana e ambiente de saúde com uma estética contemporânea:
@@ -240,15 +242,15 @@ O rótulo do controle deve ser traduzido e refletir a ação, por exemplo “Ati
 
 | Ativo atual | Uso | Dimensão observada | Situação para uso local |
 | --- | --- | ---: | --- |
-| `2a98eae19_Designsemnome.png` | Logo | 200 × 200 | Bucket público do projeto; confirmar propriedade/original |
-| `47c51bf16_Designsemnome.png` | Favicon/OG | render 1200 × 630 | Bucket público do projeto; confirmar propriedade e tipo correto |
-| `89de8db26_AnnieUno.png` | Fundadora/liderança | 737 × 1024 | Bucket público do projeto; confirmar consentimento e original |
-| `e6e48c598_duas-enfermeiras-que-trabalham-na-clinica-em-uniformes.jpg` | Técnicos | 1024 × 683 | Origem/licença não clara; bloqueado até comprovação |
-| `c2af82045_homem-e-mulher-sorridente-tiro-medio.jpg` | Cuidadores | 1024 × 681 | Origem/licença não clara; bloqueado até comprovação |
-| Unsplash `photo-1576765608535-5f04d1e3f289` | Hero/Home | 800 × 529 + fundo 1600 | Origem identificada; registrar autor/licença antes de copiar |
-| Unsplash `photo-1559839734-2b71ea197ec2` | Enfermeiros | 800 × 533 | Origem identificada; registrar autor/licença antes de copiar |
-| Unsplash `photo-1576091160399-112ba8d25d1d` | Heros internos | fundo 1600 | Origem identificada; registrar autor/licença antes de copiar |
-| Unsplash `photo-1522071820081-009f0129c71c` | Processo seletivo | 800 px | Origem identificada; registrar autor/licença antes de copiar |
+| `2a98eae19_Designsemnome.png` | Logo | 200 × 200 | Autorizado; copiar do bucket público e registrar original melhor se recebido |
+| `47c51bf16_Designsemnome.png` | Favicon/OG | render 1200 × 630 | Autorizado; copiar localmente e corrigir o tipo MIME declarado |
+| `89de8db26_AnnieUno.png` | Fundadora/liderança | 737 × 1024 | Autorizado; usar a melhor resolução pública disponível |
+| `e6e48c598_duas-enfermeiras-que-trabalham-na-clinica-em-uniformes.jpg` | Técnicos | 1024 × 683 | Autorizado para cópia local |
+| `c2af82045_homem-e-mulher-sorridente-tiro-medio.jpg` | Cuidadores | 1024 × 681 | Autorizado para cópia local |
+| Unsplash `photo-1576765608535-5f04d1e3f289` | Hero/Home | 800 × 529 + fundo 1600 | Autorizado; preservar registro da origem pública |
+| Unsplash `photo-1559839734-2b71ea197ec2` | Enfermeiros | 800 × 533 | Autorizado; preservar registro da origem pública |
+| Unsplash `photo-1576091160399-112ba8d25d1d` | Heros internos | fundo 1600 | Autorizado; preservar registro da origem pública |
+| Unsplash `photo-1522071820081-009f0129c71c` | Processo seletivo | 800 px | Autorizado; preservar registro da origem pública |
 
 Os ícones são SVGs lineares com classes da biblioteca Lucide. Devem ser reproduzidos por uma dependência licenciada e acessível. Imagens e SVGs do selo Base44 não serão reutilizados.
 

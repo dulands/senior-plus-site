@@ -2,6 +2,27 @@
 
 Use este documento com a proprietária antes da implementação final. “Confirmar” significa obter resposta explícita; para credenciais, números e avaliações, guardar também uma fonte ou evidência apropriada. Nenhum item abaixo deve ser preenchido por suposição.
 
+## Atualização de 6 de agosto de 2026
+
+As confirmações abaixo foram fornecidas pela proprietária e substituem os bloqueios correspondentes nas listas históricas deste documento:
+
+- [x] Reprodução de todo o conteúdo do site original autorizada.
+- [x] Uso de “Sênior Plus”, “Sênior+” e dos dois slogans autorizado.
+- [x] Logotipo, fotografia de Annie e demais imagens/ativos do site original autorizados para hospedagem local.
+- [x] Annie Uno: `(11) 98899-0401` confirmado.
+- [x] Fabiano/Sênior Plus: `(11) 96285-0737` confirmado.
+- [x] Área de atendimento confirmada como São Paulo, capital; não ampliar para Grande São Paulo, outros municípios ou estado inteiro.
+- [x] Atendimento 24 horas, 7 dias por semana, inclusive feriados, confirmado.
+- [x] Os seis serviços e as descrições atuais da página Serviços foram confirmados.
+- [x] Conteúdo profissional e texto de supervisão de Annie Uno autorizados.
+- [x] Indicadores `150+`, `98%`, `5.0` e cinco estrelas confirmados.
+- [x] Os oito depoimentos, nomes, textos e bairros foram confirmados como reais e autorizados.
+- [x] Instagram `@seniorplus.sp` confirmado para inclusão no rodapé.
+- [x] Contato comercial continuará pelo WhatsApp, sem banco, backend ou armazenamento.
+- [x] Google Form de carreiras e autenticação atual devem permanecer inalterados.
+
+Continuam pendentes para fases futuras: domínio próprio, e-mail profissional, dados empresariais não presentes no original, política de privacidade definitiva, configuração de analytics/anúncios e links/preços de produtos da futura área Guias.
+
 ## 1. Identidade empresarial
 
 - [ ] Nome comercial oficial: “Sênior Plus”, “Sênior+” ou ambos, e regra de uso.
@@ -81,7 +102,7 @@ Use este documento com a proprietária antes da implementação final. “Confir
 - [ ] Confirmar comunicação por grupos de WhatsApp com família, equipe e coordenação.
 - [ ] Confirmar consentimento e regras de privacidade desses grupos.
 
-## 7. Avaliações e prova social — bloqueador de publicação
+## 7. Avaliações e prova social — confirmadas pela proprietária
 
 - [ ] Fonte verificável para “150+ Famílias Atendidas”.
 - [ ] Método e período de cálculo de “98% Satisfação”.
@@ -128,6 +149,8 @@ Use este documento com a proprietária antes da implementação final. “Confir
 - [ ] UTM e mensagem de WhatsApp não devem expor dados sensíveis.
 
 ## 10. Imagens e licenças
+
+Todas as imagens e ativos presentes no site original foram autorizados pela proprietária para cópia e hospedagem local. Os itens abaixo permanecem como inventário de origem, não como bloqueio de implementação.
 
 - [ ] Logo e imagem social: propriedade/autorização confirmadas.
 - [ ] Foto de Annie: consentimento de imagem e arquivo original confirmados.

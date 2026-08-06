@@ -6,6 +6,27 @@ Este documento registra a análise do site público `https://seniorplus.base44.a
 
 Diretriz principal: reproduzir com fidelidade a identidade e a estrutura atuais, corrigindo problemas técnicos sem transformar o trabalho em um redesign. Qualquer mudança visual ou comercial marcada como opcional depende de aprovação.
 
+### Atualização de escopo — confirmações da proprietária
+
+Em 6 de agosto de 2026, a proprietária confirmou e autorizou a reprodução dos textos, logotipo, fotografias, ativos visuais, oito depoimentos, indicadores numéricos e informações profissionais/empresariais presentes no site original. Para a implementação, deixam de existir bloqueios de autorização sobre esses elementos.
+
+Também foram confirmados:
+
+- uso das marcas “Sênior Plus” e “Sênior+” com a lógica visual atual;
+- slogans “Cuidados com amor” e “Saúde de quem você mais ama em boas mãos”;
+- contatos de Annie Uno e Fabiano/Sênior Plus;
+- atendimento em São Paulo, capital, sem ampliação automática da área;
+- atendimento 24 horas, 7 dias por semana, inclusive feriados;
+- seis serviços atuais e suas descrições;
+- conteúdo profissional e texto de supervisão de Annie Uno;
+- indicadores 150+, 98%, nota 5.0 e cinco estrelas;
+- autenticidade e autorização dos oito depoimentos;
+- permanência do Google Form de carreiras e de sua autenticação atual;
+- inclusão do Instagram `@seniorplus.sp` no rodapé;
+- contato comercial enviado diretamente ao WhatsApp, sem backend ou armazenamento.
+
+O escopo aprovado para a próxima implementação é somente a estrutura técnica, componentes compartilhados e Home completa. As páginas internas poderão existir apenas como stubs `noindex`, fora do sitemap. A área futura “Guias” receberá apenas tipos, dados desativados e documentação, sem rota pública nem item de menu.
+
 ## 2. Cobertura da análise
 
 Foram acessadas e inspecionadas estas rotas públicas:
@@ -104,12 +125,12 @@ Ordem observada:
 
 ### Conteúdo e comprovação
 
-- O site publica oito depoimentos completos, 150+ famílias atendidas, 98% de satisfação e nota 5.0; tudo precisa de fonte, autorização e método verificável antes de republicação.
-- Há várias afirmações profissionais e operacionais: 15 anos de experiência, 6 anos como enfermeira, especialização em Gerontologia e Terapias Integrativas, MBA em Gestão Hospitalar, COREN ativo/certificações da equipe, atendimento 24/7, cobertura de todas as regiões, supervisão contínua e processos de seleção. Confirmar uma a uma.
+- Os oito depoimentos, 150+ famílias atendidas, 98% de satisfação, nota 5.0 e representação com cinco estrelas foram confirmados e autorizados pela proprietária.
+- As informações profissionais e empresariais do site original, incluindo experiência, especializações, MBA, supervisão e disponibilidade, foram confirmadas. A área de atendimento aprovada é somente São Paulo, capital.
 - “Melhor equipe de cuidados domiciliares de São Paulo” é um superlativo não comprovado.
 - A promessa de resposta a candidaturas em 48 horas precisa ser operacionalmente verdadeira.
 - O processo é descrito como seis etapas em Sobre/Serviços e sete etapas em Carreiras; a diferença precisa ser explicada ou unificada.
-- “Avaliação gratuita” e “avaliação sem compromisso” precisam ser confirmadas.
+- Afirmações comerciais futuras que não estejam no site original continuam dependendo de confirmação; não serão inventadas.
 
 ### Acessibilidade
 
@@ -137,8 +158,8 @@ Ordem observada:
 
 ### Conversão e Google Ads
 
-- O login obrigatório no Google Form de candidatura aumenta abandono.
-- Os links de WhatsApp não trazem mensagem inicial com contexto/campanha.
+- O login obrigatório no Google Form de candidatura aumenta abandono, mas sua permanência foi solicitada e não será alterada nesta etapa.
+- Os links de WhatsApp receberão mensagens iniciais por contexto, sem dados pessoais em eventos de medição.
 - Não há página de privacidade, aviso de tratamento de dados ou consentimento junto ao formulário. A necessidade jurídica exata deve ser validada, mas a ausência é um risco para coleta de leads e campanhas.
 - Não há uma confirmação mensurável após conversão; contatos externos diretos dificultam atribuição sem eventos de clique.
 - O selo Base44 cobre conteúdo/CTAs e gera barra horizontal em telas menores. Ele desaparece na versão independente.
@@ -185,10 +206,8 @@ Ordem observada:
 3. Exibir uma versão recortada da foto de Annie no celular, hoje ocultada.
 4. Usar mensagens pré-preenchidas distintas nos CTAs de WhatsApp por página/campanha.
 5. Criar uma landing page específica para Google Ads, mantendo a mesma identidade e reduzindo distrações.
-6. Substituir o Google Form de carreiras por formulário próprio, e-mail ou outro fluxo sem login.
-7. Adicionar prova social verificável (por exemplo, avaliações de uma fonte pública), somente após comprovação e autorização.
-8. Tornar os itens de serviços do rodapé links para âncoras/rota de Serviços.
-9. Ajustar textos superlativos e promessas para versões específicas e comprováveis.
+6. Tornar os itens de serviços do rodapé links para âncoras/rota de Serviços.
+7. Ajustar textos superlativos e promessas futuras para versões específicas e confirmadas.
 
 ## 8. Tecnologia proposta
 
@@ -238,7 +257,7 @@ Estimativa inicial: cerca de 35 a 50 arquivos, dependendo do número de variante
 
 ## 10. Etapas propostas após aprovação
 
-1. Resolver itens bloqueadores de `CONTENT_CHECKLIST.md` e selecionar ativos aprovados.
+1. Registrar as confirmações recebidas em `CONTENT_CHECKLIST.md` e manter pendentes apenas dados ainda não fornecidos, como domínio, e-mail profissional e política definitiva.
 2. Inicializar Astro/TypeScript e configuração estática.
 3. Criar tokens visuais, layout compartilhado, tema e navegação responsiva.
 4. Implementar Home e validar fidelidade nos três viewports.

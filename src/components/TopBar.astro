@@ -1,6 +1,8 @@
 ---
 import { brand, contacts } from '../data/site';
 import { eventNames } from '../lib/events';
+import { buildWhatsAppUrl } from '../lib/whatsapp';
+import BrandIcon from './BrandIcon.astro';
 import Icon from './Icon.astro';
 ---
 
@@ -16,23 +18,27 @@ import Icon from './Icon.astro';
         Disponível 24/7
       </span>
     </div>
-    <div class="top-bar__group top-bar__contacts" aria-label="Telefones de contato">
+    <div class="top-bar__group top-bar__contacts" aria-label="Contatos pelo WhatsApp">
       <a
-        href={`tel:${contacts.annie.phoneInternational}`}
-        data-event={eventNames.phoneClick}
+        href={buildWhatsAppUrl('annie', 'annie')}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-event={eventNames.whatsappAnnieClick}
         data-contact="annie"
         data-location="top_bar"
       >
-        <Icon name="phone" size={15} />
+        <BrandIcon name="whatsapp" size={15} />
         Annie: {contacts.annie.phoneDisplay}
       </a>
       <a
-        href={`tel:${contacts.fabiano.phoneInternational}`}
-        data-event={eventNames.phoneClick}
+        href={buildWhatsAppUrl('fabiano', 'fabiano')}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-event={eventNames.whatsappFabianoClick}
         data-contact="fabiano"
         data-location="top_bar"
       >
-        <Icon name="phone" size={15} />
+        <BrandIcon name="whatsapp" size={15} />
         Fabiano: {contacts.fabiano.phoneDisplay}
       </a>
     </div>

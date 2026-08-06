@@ -25,6 +25,17 @@ Também foram confirmados:
 - inclusão do Instagram `@seniorplus.sp` no rodapé;
 - contato comercial enviado diretamente ao WhatsApp, sem backend ou armazenamento.
 
+Correção posterior confirmada pela proprietária: toda menção profissional deve usar
+“com pós-graduação em Gerontologia”, e não “especialista em Gerontologia”. O texto
+de supervisão autorizado passa a ser:
+
+> Toda nossa equipe trabalha sob a supervisão direta de Annie Uno, enfermeira com
+> 15 anos de experiência, com pós-graduação em Gerontologia e Terapias Integrativas,
+> além de MBA em Gestão Hospitalar.
+>
+> Esta coordenação garante que todos os cuidadores sigam os mais altos padrões de
+> qualidade e humanização no atendimento aos nossos clientes em São Paulo - SP.
+
 O escopo aprovado para a próxima implementação é somente a estrutura técnica, componentes compartilhados e Home completa. As páginas internas poderão existir apenas como stubs `noindex`, fora do sitemap. A área futura “Guias” receberá apenas tipos, dados desativados e documentação, sem rota pública nem item de menu.
 
 ## 2. Cobertura da análise

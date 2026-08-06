@@ -11,9 +11,11 @@ export const brand = {
   compactName: 'Sênior+',
   slogan: 'Cuidados com amor',
   headline: 'Saúde de quem você mais ama em boas mãos',
+  footerSlogan: 'Saúde de quem você mais ama em boas mãos',
   location: 'São Paulo - SP',
   serviceArea: 'São Paulo, capital',
-  availability: 'Atendimento 24h, 7 dias por semana, inclusive feriados',
+  availability:
+    'Atendimento 24 horas por dia, 7 dias por semana, incluindo feriados.',
   instagramHandle: '@seniorplus.sp',
   instagramUrl: 'https://www.instagram.com/seniorplus.sp/',
   siteUrl: '',
@@ -66,15 +68,15 @@ export const founder = {
   roleLabel: 'Fundadora',
   homeTitle: 'Annie Uno: Experiência e Amor no Cuidado',
   homeDescription:
-    'Com 15 anos de experiência em enfermagem, 6 anos como enfermeira, especialista em Gerontologia e Terapias Integrativas, e MBA em Gestão Hospitalar, Annie lidera a Sênior Plus com dedicação e expertise.',
+    'Com 15 anos de experiência em enfermagem, 6 anos como enfermeira, com pós-graduação em Gerontologia e Terapias Integrativas, e MBA em Gestão Hospitalar, Annie lidera a Sênior Plus com dedicação e expertise.',
   credentials: [
-    'Especialista em Gerontologia',
+    'Pós-graduação em Gerontologia',
     'MBA em Gestão Hospitalar',
     'Terapias Integrativas',
     '15 anos de experiência',
   ],
   supervisionText:
-    'Toda nossa equipe trabalha sob a supervisão direta de Annie Uno, enfermeira com 15 anos de experiência, especialista em Gerontologia e Terapias Integrativas, além de MBA em Gestão Hospitalar. Esta coordenação garante que todos os cuidadores sigam os mais altos padrões de qualidade e humanização no atendimento aos nossos clientes em São Paulo - SP.',
+    'Toda nossa equipe trabalha sob a supervisão direta de Annie Uno, enfermeira com 15 anos de experiência, com pós-graduação em Gerontologia e Terapias Integrativas, além de MBA em Gestão Hospitalar. Esta coordenação garante que todos os cuidadores sigam os mais altos padrões de qualidade e humanização no atendimento aos nossos clientes em São Paulo - SP.',
 } as const;
 
 export const services: Service[] = [

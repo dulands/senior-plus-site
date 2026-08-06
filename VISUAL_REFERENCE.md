@@ -17,6 +17,12 @@ A identidade atual combina assistência humana e ambiente de saúde com uma est�
 - fotografias de cuidado/saúde com sobreposição verde;
 - CTAs brancos ou verde-petróleo, sem gradientes chamativos adicionais.
 
+Correção de interpretação registrada durante a comparação de implementação: mint e
+teal são acentos da identidade, não a base de todas as superfícies. As áreas neutras
+devem permanecer branco/`#FAFAF9` no tema claro e carvão `#2A2A2A`/`#1A1A1A` no
+tema escuro. Fundos, cards, cabeçalho, rodapé e sombras não devem receber tonalidade
+verde fora dos acentos já observados no original.
+
 Não há fonte de marca externa observada. O site usa a pilha de sistema (`ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif`).
 
 ## 2. Paleta observada
@@ -86,6 +92,8 @@ Títulos são largos e com pouco tracking aparente. O H1 móvel do início usa 4
 - Faixa superior: 36 px de altura, teal escuro, conteúdo em uma linha.
 - Cabeçalho: 80 px, fundo branco no claro e `#2A2A2A` no escuro; permanece no topo ao rolar.
 - Logo: imagem 48 × 48 px; texto “Sênior+” 24 px; subtítulo “Cuidados com amor” 12 px.
+- O arquivo quadrado do logo usa cantos arredondados perceptíveis, equivalentes a
+  aproximadamente 12–16 px de raio.
 - Menu: Início, Sobre, Serviços, Nossa Equipe, Avaliações, Contato, Carreiras.
 - Item ativo: bloco mint com raio de aproximadamente 8 px.
 - Ações: ícone sol/lua e CTA “Fale Conosco” de cerca de 147 × 36 px.

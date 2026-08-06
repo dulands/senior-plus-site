@@ -2,6 +2,7 @@
 import { brand, contacts, navigation } from '../data/site';
 import { eventNames } from '../lib/events';
 import { buildWhatsAppUrl } from '../lib/whatsapp';
+import BrandIcon from './BrandIcon.astro';
 import Icon from './Icon.astro';
 
 const year = new Date().getFullYear();
@@ -14,12 +15,9 @@ const year = new Date().getFullYear();
         <img src="/images/logo-senior-plus.png" alt="" width="58" height="58" />
         <span class="brand__text">
           <strong>{brand.compactName}</strong>
-          <small>{brand.slogan}</small>
+          <small>{brand.footerSlogan}</small>
         </span>
       </a>
-      <p>
-        Saúde de quem você mais ama em boas mãos.
-      </p>
       <a
         class="social-link"
         href={brand.instagramUrl}
@@ -28,9 +26,11 @@ const year = new Date().getFullYear();
         data-event={eventNames.instagramClick}
         data-location="footer"
         data-cta="instagram"
+        aria-label={`Abrir o Instagram ${brand.instagramHandle}`}
+        title={brand.instagramHandle}
       >
-        <Icon name="instagram" size={20} />
-        <span>{brand.instagramHandle}</span>
+        <BrandIcon name="instagram" size={26} />
+        <span class="sr-only">{brand.instagramHandle}</span>
       </a>
     </div>
     <div>
@@ -79,6 +79,6 @@ const year = new Date().getFullYear();
   </div>
   <div class="container site-footer__bottom">
     <p>© {year} Sênior Plus. Todos os direitos reservados.</p>
-    <p>Atendimento 24 horas • 7 dias por semana</p>
+    <p>{brand.availability}</p>
   </div>
 </footer>

@@ -1,7 +1,7 @@
 ---
 import { eventNames } from '../lib/events';
 import { buildWhatsAppUrl } from '../lib/whatsapp';
-import Icon from './Icon.astro';
+import BrandIcon from './BrandIcon.astro';
 ---
 
 <a
@@ -12,8 +12,8 @@ import Icon from './Icon.astro';
   aria-label="Conversar com Annie Uno pelo WhatsApp"
   data-event={eventNames.whatsappAnnieClick}
   data-contact="annie"
-  data-location="floating_button"
+  data-location="floating-button"
   data-cta="whatsapp"
 >
-  <Icon name="phone" size={28} strokeWidth={2.2} />
+  <BrandIcon name="whatsapp" size={32} />
 </a>

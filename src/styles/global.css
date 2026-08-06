@@ -9,19 +9,19 @@
   --teal-600: #239d8d;
   --teal-700: #167f72;
   --teal-800: #0e6259;
-  --charcoal-950: #172522;
-  --charcoal-800: #293c38;
-  --charcoal-600: #59706b;
+  --charcoal-950: #1a1a1a;
+  --charcoal-800: #2a2a2a;
+  --charcoal-600: #6b7280;
   --white: #ffffff;
   --page: #ffffff;
   --surface: #ffffff;
-  --surface-soft: #f7fbfa;
+  --surface-soft: #fafaf9;
   --text: var(--charcoal-950);
   --muted: var(--charcoal-600);
-  --border: #dceae6;
+  --border: #e5e7eb;
   --header: rgba(255, 255, 255, 0.94);
-  --shadow-sm: 0 8px 24px rgba(20, 72, 63, 0.08);
-  --shadow-md: 0 18px 50px rgba(16, 77, 67, 0.14);
+  --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 18px 50px rgba(0, 0, 0, 0.14);
   --radius-sm: 12px;
   --radius-md: 18px;
   --radius-lg: 28px;
@@ -34,13 +34,13 @@
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --page: #101a18;
-  --surface: #182724;
-  --surface-soft: #13211f;
-  --text: #f3faf8;
-  --muted: #b7cbc6;
-  --border: #2b4540;
-  --header: rgba(16, 26, 24, 0.95);
+  --page: #1a1a1a;
+  --surface: #1a1a1a;
+  --surface-soft: #2a2a2a;
+  --text: #ffffff;
+  --muted: #b8b8b8;
+  --border: #333333;
+  --header: rgba(42, 42, 42, 0.96);
   --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.22);
   --shadow-md: 0 18px 50px rgba(0, 0, 0, 0.32);
 }
@@ -162,6 +162,11 @@ h3 {
   font-weight: 600;
 }
 
+:root[data-theme='dark'] .top-bar {
+  color: #fff;
+  background: #167d7c;
+}
+
 .top-bar__inner,
 .top-bar__group,
 .top-bar__item,
@@ -224,6 +229,7 @@ h3 {
   width: 52px;
   height: 52px;
   object-fit: contain;
+  border-radius: 14px;
 }
 
 .brand__text {
@@ -284,7 +290,7 @@ h3 {
 :root[data-theme='dark'] .navigation a:hover,
 :root[data-theme='dark'] .navigation a.active {
   color: var(--mint-300);
-  background: #203a35;
+  background: #3a3a3a;
 }
 
 .icon-button {
@@ -308,7 +314,7 @@ h3 {
 }
 
 :root[data-theme='dark'] .icon-button:hover {
-  background: #203a35;
+  background: #333333;
 }
 
 .theme-toggle__sun,
@@ -820,9 +826,9 @@ h3 {
   bottom: 34px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  max-width: 190px;
-  padding: 15px 17px;
+  gap: 15px;
+  max-width: 238px;
+  padding: 20px 22px;
   border: 1px solid var(--border);
   border-radius: 17px;
   color: var(--teal-700);
@@ -833,13 +839,21 @@ h3 {
 .founder-section__badge span {
   display: grid;
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   line-height: 1.25;
 }
 
 .founder-section__badge strong {
   color: var(--text);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
+}
+
+.founder-section {
+  background: linear-gradient(to bottom, #fafaf9, #fafaf9);
+}
+
+:root[data-theme='dark'] .founder-section {
+  background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
 }
 
 .founder-section__content {
@@ -885,28 +899,36 @@ h3 {
 .benefit-card {
   display: flex;
   min-width: 0;
-  min-height: 176px;
-  padding: 25px 24px;
-  gap: 18px;
+  min-height: 190px;
+  padding: 30px 29px;
+  gap: 20px;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background: var(--surface);
+  box-shadow: var(--shadow-sm);
 }
 
 .benefit-card__icon {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   margin: 0;
   border-radius: 14px;
 }
 
 .benefit-card h3 {
   margin-bottom: 8px;
+  font-size: 1.3rem;
 }
 
 .benefit-card p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+:root[data-theme='dark'] .benefit-card {
+  border-color: #333333;
+  background: #1a1a1a;
 }
 
 .final-cta {
@@ -944,8 +966,8 @@ h3 {
 
 .final-cta__icon {
   display: grid;
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
   margin-bottom: 23px;
   place-items: center;
   color: #fff;
@@ -970,8 +992,12 @@ h3 {
 }
 
 .site-footer {
-  color: #d4e1de;
-  background: #172522;
+  color: #e5e5e5;
+  background: #2a2a2a;
+}
+
+:root[data-theme='dark'] .site-footer {
+  background: #121212;
 }
 
 .site-footer__grid {
@@ -990,13 +1016,15 @@ h3 {
 }
 
 .brand--footer .brand__text small {
-  color: #b7cbc6;
+  max-width: 250px;
+  color: #d1d5db;
+  line-height: 1.35;
 }
 
 .site-footer__brand > p {
   max-width: 320px;
   margin: 22px 0;
-  color: #adbfbb;
+  color: #b8b8b8;
   font-size: 0.9rem;
 }
 
@@ -1045,9 +1073,12 @@ h3 {
 }
 
 .social-link {
-  width: fit-content;
-  min-height: 44px;
+  width: 48px;
+  height: 48px;
   align-items: center;
+  justify-content: center;
+  border: 1px solid #4a4a4a;
+  border-radius: 12px;
   color: var(--mint-300);
   font-weight: 700;
 }
@@ -1058,8 +1089,8 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  border-top: 1px solid #2c3f3b;
-  color: #819691;
+  border-top: 1px solid #444444;
+  color: #a3a3a3;
   font-size: 0.77rem;
 }
 
@@ -1082,6 +1113,24 @@ h3 {
   background: #25d366;
   box-shadow: 0 12px 30px rgba(17, 90, 50, 0.34);
   transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.floating-whatsapp::after {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 13px;
+  height: 13px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #ef4444;
+  content: '';
+  animation: whatsapp-status 2s ease-out infinite;
+}
+
+@keyframes whatsapp-status {
+  0%, 45%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+  15% { box-shadow: 0 0 0 7px rgba(239, 68, 68, 0.2); }
 }
 
 .floating-whatsapp:hover {
@@ -1317,7 +1366,8 @@ h3 {
   }
 
   .benefit-card {
-    padding: 22px 20px;
+    min-height: 0;
+    padding: 28px 24px;
   }
 
   .final-cta {
@@ -1356,6 +1406,10 @@ h3 {
     height: 54px;
   }
 
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
   .stub-page {
     padding-block: 80px;
   }
@@ -1373,5 +1427,9 @@ h3 {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+
+  .floating-whatsapp::after {
+    animation: none;
   }
 }

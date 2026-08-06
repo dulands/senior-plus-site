@@ -1,0 +1,46 @@
+---
+import Icon from './Icon.astro';
+---
+
+<button
+  class="icon-button theme-toggle"
+  type="button"
+  aria-label="Ativar tema escuro"
+  aria-pressed="false"
+  data-theme-toggle
+>
+  <span class="theme-toggle__sun"><Icon name="sun" size={21} /></span>
+  <span class="theme-toggle__moon"><Icon name="moon" size={21} /></span>
+</button>
+
+<script>
+  const initializeThemeToggle = () => {
+    const button = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+    if (!button || button.dataset.ready === 'true') return;
+
+    button.dataset.ready = 'true';
+    const syncState = () => {
+      const isDark = document.documentElement.dataset.theme === 'dark';
+      const actionLabel = isDark ? 'Ativar tema claro' : 'Ativar tema escuro';
+      button.setAttribute('aria-pressed', String(isDark));
+      button.setAttribute('aria-label', actionLabel);
+      button.title = actionLabel;
+    };
+
+    syncState();
+    button.addEventListener('click', () => {
+      const nextTheme =
+        document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = nextTheme;
+      try {
+        localStorage.setItem('seniorplus-theme', nextTheme);
+      } catch {
+        // O tema funciona mesmo quando o armazenamento local está indisponível.
+      }
+      syncState();
+    });
+  };
+
+  initializeThemeToggle();
+  document.addEventListener('astro:page-load', initializeThemeToggle);
+</script>

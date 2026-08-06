@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# A linha Sitemap será adicionada pelo build quando PUBLIC_SITE_URL estiver definido.

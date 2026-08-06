@@ -1,0 +1,72 @@
+---
+import Navigation from './Navigation.astro';
+import Icon from './Icon.astro';
+import { eventNames } from '../lib/events';
+import { buildWhatsAppUrl } from '../lib/whatsapp';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+---
+
+<div class="mobile-menu">
+  <button
+    class="icon-button mobile-menu__toggle"
+    type="button"
+    aria-label="Abrir menu principal"
+    aria-expanded="false"
+    aria-controls="mobile-navigation"
+    data-mobile-menu-toggle
+  >
+    <span class="mobile-menu__open"><Icon name="menu" size={24} /></span>
+    <span class="mobile-menu__close"><Icon name="x" size={24} /></span>
+  </button>
+  <div id="mobile-navigation" class="mobile-menu__panel" hidden data-mobile-menu-panel>
+    <Navigation currentPath={currentPath} mobile />
+    <a
+      class="button button--primary mobile-menu__cta"
+      href={buildWhatsAppUrl('annie', 'general')}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-event={eventNames.whatsappAnnieClick}
+      data-contact="annie"
+      data-location="mobile_menu"
+      data-cta="fale_conosco"
+    >Fale Conosco</a>
+  </div>
+</div>
+
+<script>
+  const initializeMobileMenu = () => {
+    const toggle = document.querySelector<HTMLButtonElement>('[data-mobile-menu-toggle]');
+    const panel = document.querySelector<HTMLElement>('[data-mobile-menu-panel]');
+    if (!toggle || !panel || toggle.dataset.ready === 'true') return;
+
+    toggle.dataset.ready = 'true';
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Fechar menu principal' : 'Abrir menu principal');
+      panel.hidden = !open;
+    };
+
+    toggle.addEventListener('click', () => {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    panel.addEventListener('click', (event) => {
+      if ((event.target as Element).closest('a')) setOpen(false);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+  };
+
+  initializeMobileMenu();
+  document.addEventListener('astro:page-load', initializeMobileMenu);
+</script>

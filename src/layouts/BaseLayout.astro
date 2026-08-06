@@ -1,0 +1,61 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import SEO from '../components/SEO.astro';
+import TopBar from '../components/TopBar.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string | undefined;
+  noindex?: boolean | undefined;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>> | undefined;
+}
+
+const { title, description, image, noindex, structuredData } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#59cbb7" />
+    <link rel="icon" type="image/png" href="/images/favicon-senior-plus.png" />
+    <script is:inline>
+      (() => {
+        try {
+          const saved = localStorage.getItem('seniorplus-theme');
+          const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light';
+          document.documentElement.dataset.theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : preferred;
+        } catch {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      noindex={noindex}
+      structuredData={structuredData}
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+    <TopBar />
+    <Header currentPath={Astro.url.pathname} />
+    <main id="conteudo-principal" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+    <FloatingWhatsApp />
+    <script is:inline src="/scripts/events.js"></script>
+  </body>
+</html>

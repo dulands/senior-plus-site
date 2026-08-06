@@ -1,0 +1,26 @@
+---
+import { benefits } from '../data/site';
+import Icon from './Icon.astro';
+---
+
+<section class="section benefits-section" aria-labelledby="beneficios-title">
+  <div class="container">
+    <div class="section-heading section-heading--center">
+      <h2 id="beneficios-title">Por que escolher a Sênior+?</h2>
+      <p>Benefícios que fazem a diferença na vida de quem você ama</p>
+    </div>
+    <div class="benefits-grid">
+      {
+        benefits.map((benefit) => (
+          <article class="benefit-card">
+            <div class="benefit-card__icon"><Icon name={benefit.icon} size={26} /></div>
+            <div>
+              <h3>{benefit.title}</h3>
+              <p>{benefit.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+---
+import { eventNames } from '../lib/events';
+import { buildWhatsAppUrl } from '../lib/whatsapp';
+import Icon from './Icon.astro';
+---
+
+<a
+  class="floating-whatsapp"
+  href={buildWhatsAppUrl('annie', 'general')}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Conversar com Annie Uno pelo WhatsApp"
+  data-event={eventNames.whatsappAnnieClick}
+  data-contact="annie"
+  data-location="floating_button"
+  data-cta="whatsapp"
+>
+  <Icon name="phone" size={28} strokeWidth={2.2} />
+</a>

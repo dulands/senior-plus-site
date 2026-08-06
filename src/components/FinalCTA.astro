@@ -1,0 +1,42 @@
+---
+import { eventNames } from '../lib/events';
+import { buildWhatsAppUrl } from '../lib/whatsapp';
+import Button from './Button.astro';
+import Icon from './Icon.astro';
+---
+
+<section class="section final-cta" aria-labelledby="final-cta-title">
+  <div class="container final-cta__inner">
+    <div class="final-cta__icon"><Icon name="heart" size={38} /></div>
+    <h2 id="final-cta-title">Pronto para começar?</h2>
+    <p>Entre em contato hoje e descubra como podemos cuidar de quem você mais ama</p>
+    <div class="final-cta__actions">
+      <Button
+        href={buildWhatsAppUrl('annie', 'evaluation')}
+        variant="light"
+        size="large"
+        target="_blank"
+        rel="noopener noreferrer"
+        dataEvent={eventNames.whatsappAnnieClick}
+        dataContact="annie"
+        dataLocation="final_cta"
+        dataCta="falar_annie"
+      >
+        <Icon name="phone" size={19} /> WhatsApp Annie
+      </Button>
+      <Button
+        href={buildWhatsAppUrl('fabiano', 'fabiano')}
+        variant="light"
+        size="large"
+        target="_blank"
+        rel="noopener noreferrer"
+        dataEvent={eventNames.whatsappFabianoClick}
+        dataContact="fabiano"
+        dataLocation="final_cta"
+        dataCta="falar_fabiano"
+      >
+        <Icon name="phone" size={19} /> WhatsApp Fabiano
+      </Button>
+    </div>
+  </div>
+</section>

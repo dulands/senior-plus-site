@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import annieImage from '../assets/images/annie-uno.png';
+import { founder } from '../data/site';
+import Icon from './Icon.astro';
+---
+
+<section class="section founder-section" aria-labelledby="annie-title">
+  <div class="container founder-section__grid">
+    <div class="founder-section__visual">
+      <Image
+        src={annieImage}
+        alt="Annie Uno, enfermeira e fundadora da Sênior Plus"
+        widths={[480, 640, 737]}
+        sizes="(max-width: 900px) 44vw, 40vw"
+        format="webp"
+        quality={84}
+        loading="lazy"
+      />
+      <div class="founder-section__badge">
+        <Icon name="award" size={25} />
+        <span><strong>15 anos</strong> de dedicação</span>
+      </div>
+    </div>
+    <div class="founder-section__content">
+      <span class="section-kicker">{founder.roleLabel}</span>
+      <h2 id="annie-title">{founder.homeTitle}</h2>
+      <p class="founder-section__lead">
+        {founder.homeDescription}
+      </p>
+      <ul class="check-list">
+        {founder.credentials.map((credential) => <li><Icon name="check" size={18} /> {credential}</li>)}
+      </ul>
+      <a class="text-link" href="/sobre/">
+        Conheça Nossa História <Icon name="arrow-right" size={18} />
+      </a>
+    </div>
+  </div>
+</section>

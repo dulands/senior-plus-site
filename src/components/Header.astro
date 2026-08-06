@@ -1,0 +1,50 @@
+---
+import { brand } from '../data/site';
+import { eventNames } from '../lib/events';
+import { buildWhatsAppUrl } from '../lib/whatsapp';
+import Button from './Button.astro';
+import MobileMenu from './MobileMenu.astro';
+import Navigation from './Navigation.astro';
+import ThemeToggle from './ThemeToggle.astro';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Sênior Plus — página inicial">
+      <img
+        src="/images/logo-senior-plus.png"
+        alt=""
+        width="52"
+        height="52"
+        class="brand__logo"
+      />
+      <span class="brand__text">
+        <strong>{brand.compactName}</strong>
+        <small>{brand.slogan}</small>
+      </span>
+    </a>
+    <div class="site-header__desktop-nav">
+      <Navigation currentPath={currentPath} />
+    </div>
+    <div class="site-header__actions">
+      <ThemeToggle />
+      <Button
+        href={buildWhatsAppUrl('annie', 'general')}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="site-header__cta"
+        dataEvent={eventNames.whatsappAnnieClick}
+        dataContact="annie"
+        dataLocation="header"
+        dataCta="fale_conosco"
+      >Fale Conosco</Button>
+      <MobileMenu currentPath={currentPath} />
+    </div>
+  </div>
+</header>

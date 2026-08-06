@@ -1,0 +1,84 @@
+---
+import { brand, contacts, navigation } from '../data/site';
+import { eventNames } from '../lib/events';
+import { buildWhatsAppUrl } from '../lib/whatsapp';
+import Icon from './Icon.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <a class="brand brand--footer" href="/" aria-label="Sênior Plus — página inicial">
+        <img src="/images/logo-senior-plus.png" alt="" width="58" height="58" />
+        <span class="brand__text">
+          <strong>{brand.compactName}</strong>
+          <small>{brand.slogan}</small>
+        </span>
+      </a>
+      <p>
+        Saúde de quem você mais ama em boas mãos.
+      </p>
+      <a
+        class="social-link"
+        href={brand.instagramUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-event={eventNames.instagramClick}
+        data-location="footer"
+        data-cta="instagram"
+      >
+        <Icon name="instagram" size={20} />
+        <span>{brand.instagramHandle}</span>
+      </a>
+    </div>
+    <div>
+      <h2>Navegação</h2>
+      <ul class="footer-links">
+        {navigation.slice(0, 6).map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <h2>Serviços</h2>
+      <ul class="footer-links">
+        <li><a href="/servicos/">Consultoria Especializada</a></li>
+        <li><a href="/servicos/">Acompanhamento Integral</a></li>
+        <li><a href="/servicos/">Procedimentos de Enfermagem</a></li>
+        <li><a href="/servicos/">Planos Flexíveis</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Contato</h2>
+      <address class="footer-contact">
+        <span><Icon name="map-pin" size={18} /> {brand.location}</span>
+        <a
+          href={buildWhatsAppUrl('annie', 'annie')}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-event={eventNames.whatsappAnnieClick}
+          data-contact="annie"
+          data-location="footer"
+        >
+          <Icon name="phone" size={18} />
+          Annie: {contacts.annie.phoneDisplay}
+        </a>
+        <a
+          href={buildWhatsAppUrl('fabiano', 'fabiano')}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-event={eventNames.whatsappFabianoClick}
+          data-contact="fabiano"
+          data-location="footer"
+        >
+          <Icon name="phone" size={18} />
+          Fabiano: {contacts.fabiano.phoneDisplay}
+        </a>
+      </address>
+    </div>
+  </div>
+  <div class="container site-footer__bottom">
+    <p>© {year} Sênior Plus. Todos os direitos reservados.</p>
+    <p>Atendimento 24 horas • 7 dias por semana</p>
+  </div>
+</footer>

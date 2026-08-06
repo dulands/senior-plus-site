@@ -1,0 +1,27 @@
+{
+  "name": "senior-plus-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.16.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro build && node scripts/generate-sitemap.mjs",
+    "preview": "astro preview",
+    "test": "node scripts/validate-build.mjs",
+    "optimize:assets": "node scripts/optimize-static-assets.mjs"
+  },
+  "dependencies": {
+    "@lucide/astro": "^0.556.0",
+    "astro": "^5.13.5",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.9.2"
+  }
+}

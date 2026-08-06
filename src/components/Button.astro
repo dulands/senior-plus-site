@@ -1,0 +1,55 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'light' | 'ghost';
+  size?: 'default' | 'large';
+  class?: string;
+  target?: '_blank';
+  rel?: string;
+  type?: 'button' | 'submit';
+  ariaLabel?: string;
+  dataEvent?: string;
+  dataContact?: string;
+  dataLocation?: string;
+  dataCta?: string;
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'default',
+  class: className = '',
+  target,
+  rel,
+  type = 'button',
+  ariaLabel,
+  dataEvent,
+  dataContact,
+  dataLocation,
+  dataCta,
+} = Astro.props;
+
+const classes = `button button--${variant} button--${size} ${className}`;
+---
+
+{
+  href ? (
+    <a
+      class={classes}
+      href={href}
+      target={target}
+      rel={rel}
+      aria-label={ariaLabel}
+      data-event={dataEvent}
+      data-contact={dataContact}
+      data-location={dataLocation}
+      data-cta={dataCta}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button class={classes} type={type} aria-label={ariaLabel}>
+      <slot />
+    </button>
+  )
+}

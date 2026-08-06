@@ -1,0 +1,30 @@
+---
+import { navigation } from '../data/site';
+
+interface Props {
+  currentPath: string;
+  mobile?: boolean;
+}
+
+const { currentPath, mobile = false } = Astro.props;
+const isActive = (href: string) =>
+  href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+---
+
+<nav class:list={['navigation', { 'navigation--mobile': mobile }]} aria-label="Navegação principal">
+  <ul>
+    {
+      navigation.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class:list={{ active: isActive(item.href) }}
+            aria-current={isActive(item.href) ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

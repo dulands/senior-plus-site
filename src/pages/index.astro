@@ -1,0 +1,50 @@
+---
+import BenefitsGrid from '../components/BenefitsGrid.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import FounderSection from '../components/FounderSection.astro';
+import Hero from '../components/Hero.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import { brand, contacts, homeMetadata, metrics } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: brand.name,
+    description: homeMetadata.description,
+    telephone: contacts.annie.phoneInternational,
+    areaServed: {
+      '@type': 'City',
+      name: 'São Paulo',
+    },
+    openingHours: 'Mo-Su 00:00-23:59',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: metrics[2].value,
+      bestRating: '5',
+      ratingCount: '8',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: homeMetadata.title,
+    description: homeMetadata.description,
+    inLanguage: 'pt-BR',
+  },
+];
+---
+
+<BaseLayout
+  title={homeMetadata.title}
+  description={homeMetadata.description}
+  image={homeMetadata.socialImage}
+  structuredData={structuredData}
+>
+  <Hero />
+  <ServicesSection />
+  <FounderSection />
+  <BenefitsGrid />
+  <FinalCTA />
+</BaseLayout>

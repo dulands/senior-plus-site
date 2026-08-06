@@ -1,0 +1,40 @@
+---
+import { brand, contacts } from '../data/site';
+import { eventNames } from '../lib/events';
+import Icon from './Icon.astro';
+---
+
+<div class="top-bar">
+  <div class="container top-bar__inner">
+    <div class="top-bar__group">
+      <span class="top-bar__item">
+        <Icon name="map-pin" size={15} />
+        {brand.location}
+      </span>
+      <span class="top-bar__item top-bar__availability">
+        <Icon name="clock" size={15} />
+        Disponível 24/7
+      </span>
+    </div>
+    <div class="top-bar__group top-bar__contacts" aria-label="Telefones de contato">
+      <a
+        href={`tel:${contacts.annie.phoneInternational}`}
+        data-event={eventNames.phoneClick}
+        data-contact="annie"
+        data-location="top_bar"
+      >
+        <Icon name="phone" size={15} />
+        Annie: {contacts.annie.phoneDisplay}
+      </a>
+      <a
+        href={`tel:${contacts.fabiano.phoneInternational}`}
+        data-event={eventNames.phoneClick}
+        data-contact="fabiano"
+        data-location="top_bar"
+      >
+        <Icon name="phone" size={15} />
+        Fabiano: {contacts.fabiano.phoneDisplay}
+      </a>
+    </div>
+  </div>
+</div>

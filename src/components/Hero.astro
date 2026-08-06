@@ -1,0 +1,89 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/hero-cuidados.jpg';
+import { brand } from '../data/site';
+import { eventNames } from '../lib/events';
+import { buildWhatsAppUrl } from '../lib/whatsapp';
+import Button from './Button.astro';
+import Icon from './Icon.astro';
+---
+
+<section class="hero">
+  <div class="hero__background" aria-hidden="true">
+    <Image
+      src={heroImage}
+      alt=""
+      widths={[768, 1280, 1920]}
+      sizes="100vw"
+      format="webp"
+      quality={75}
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <div class="eyebrow eyebrow--light">
+        <Icon name="sparkles" size={17} />
+        {brand.location}
+      </div>
+      <h1>{brand.headline}</h1>
+      <p class="hero__lead">
+        Há mais de 15 anos proporcionando cuidados humanizados para idosos.
+      </p>
+      <div class="hero__actions">
+        <Button
+          href={buildWhatsAppUrl('annie', 'evaluation')}
+          variant="light"
+          size="large"
+          target="_blank"
+          rel="noopener noreferrer"
+          dataEvent={eventNames.whatsappAnnieClick}
+          dataContact="annie"
+          dataLocation="hero"
+          dataCta="solicitar_avaliacao"
+        >
+          Fale com Annie
+          <Icon name="arrow-right" size={20} />
+        </Button>
+        <Button href="/servicos/" variant="secondary" size="large" dataLocation="hero" dataCta="servicos">
+          Nossos Serviços
+        </Button>
+      </div>
+      <div class="hero__rating" aria-label="Avaliação de clientes: cinco estrelas">
+        <div class="hero__avatars" aria-hidden="true">
+          <span><Icon name="heart" size={16} /></span>
+          <span><Icon name="heart" size={16} /></span>
+          <span><Icon name="heart" size={16} /></span>
+          <span><Icon name="heart" size={16} /></span>
+        </div>
+        <div>
+          <div class="stars" aria-hidden="true">
+            {Array.from({ length: 5 }).map(() => <Icon name="star" size={17} />)}
+          </div>
+          <strong>Avaliação de clientes</strong>
+        </div>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__image-card">
+        <Image
+          src={heroImage}
+          alt="Profissional de saúde acolhendo uma pessoa idosa"
+          widths={[480, 640, 800]}
+          sizes="(max-width: 900px) 0px, 42vw"
+          format="webp"
+          quality={82}
+          loading="lazy"
+        />
+      </div>
+      <div class="hero__experience-card">
+        <span class="hero__experience-icon"><Icon name="award" size={25} /></span>
+        <span class="hero__experience-copy">
+          <strong>15+</strong>
+          <small>Anos de experiência</small>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

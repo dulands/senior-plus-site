@@ -1,0 +1,15 @@
+---
+import { services } from '../data/site';
+import ServiceHighlight from './ServiceHighlight.astro';
+
+const featuredServices = services.filter((service) => service.featuredOnHome);
+---
+
+<section class="section services-section" aria-labelledby="servicos-destaque">
+  <div class="container">
+    <h2 id="servicos-destaque" class="sr-only">Destaques dos serviços</h2>
+    <div class="services-grid" aria-labelledby="servicos-destaque">
+      {featuredServices.map((service) => <ServiceHighlight service={service} />)}
+    </div>
+  </div>
+</section>

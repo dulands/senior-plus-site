@@ -1,0 +1,85 @@
+---
+import {
+  ArrowRight,
+  Award,
+  BadgeCheck,
+  CalendarDays,
+  Camera,
+  Check,
+  Clock3,
+  Heart,
+  HeartHandshake,
+  MapPin,
+  Menu,
+  Moon,
+  Phone,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  Stethoscope,
+  Sun,
+  UserCheck,
+  Users,
+  X,
+} from '@lucide/astro';
+import type { IconName } from '../types/site';
+
+interface Props {
+  name: IconName;
+  size?: number;
+  strokeWidth?: number;
+  class?: string;
+  decorative?: boolean;
+  label?: string;
+}
+
+const {
+  name,
+  size = 24,
+  strokeWidth = 2,
+  class: className,
+  decorative = true,
+  label,
+} = Astro.props;
+
+const icons = {
+  'arrow-right': ArrowRight,
+  award: Award,
+  'badge-check': BadgeCheck,
+  calendar: CalendarDays,
+  check: Check,
+  clock: Clock3,
+  heart: Heart,
+  'home-heart': HeartHandshake,
+  instagram: Camera,
+  'map-pin': MapPin,
+  menu: Menu,
+  moon: Moon,
+  phone: Phone,
+  'shield-check': ShieldCheck,
+  sparkles: Sparkles,
+  star: Star,
+  stethoscope: Stethoscope,
+  sun: Sun,
+  'user-check': UserCheck,
+  users: Users,
+  x: X,
+} as const;
+
+const IconComponent = icons[name];
+const iconAttributes = {
+  ...(className ? { class: className } : {}),
+  ...(decorative
+    ? { 'aria-hidden': 'true' as const }
+    : label
+      ? { 'aria-label': label }
+      : {}),
+};
+---
+
+<IconComponent
+  size={size}
+  stroke-width={strokeWidth}
+  focusable="false"
+  {...iconAttributes}
+/>

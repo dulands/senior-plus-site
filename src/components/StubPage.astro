@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<BaseLayout
+  title={`${title} | Sênior Plus`}
+  description="Página em preparação. Volte à página inicial da Sênior Plus."
+  noindex
+>
+  <section class="stub-page">
+    <div class="container stub-page__inner">
+      <span class="section-kicker">Página futura</span>
+      <h1>{title}</h1>
+      <p>
+        Esta rota existe apenas para apoiar o desenvolvimento da navegação. O conteúdo
+        ainda não representa uma página finalizada.
+      </p>
+      <a class="button button--primary button--default" href="/">Voltar ao início</a>
+    </div>
+  </section>
+</BaseLayout>

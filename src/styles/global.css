@@ -13,18 +13,24 @@
   --charcoal-800: #2a2a2a;
   --charcoal-600: #6b7280;
   --white: #ffffff;
-  --page: #f5f5f4;
-  --surface: #ffffff;
-  --surface-soft: #fafaf9;
+  --surface-light-base: #f7f4ee;
+  --surface-light-raised: #fbfaf7;
+  --surface-light-soft: #f1eee8;
+  --text-on-dark: #f7f4ee;
+  --hero-foreground: #ffffff;
+  --page: var(--surface-light-base);
+  --surface: var(--surface-light-raised);
+  --surface-soft: var(--surface-light-soft);
   --text: var(--charcoal-950);
   --muted: var(--charcoal-600);
-  --border: #e5e7eb;
-  --header: rgba(255, 255, 255, 0.94);
+  --border: #e3ded5;
+  --header: rgba(251, 250, 247, 0.94);
   --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 18px 50px rgba(0, 0, 0, 0.14);
   --radius-sm: 12px;
   --radius-md: 18px;
   --radius-lg: 28px;
+  --brand-logo-radius: 14px;
   --container: 1248px;
   --header-height: 80px;
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -37,7 +43,7 @@
   --page: #1a1a1a;
   --surface: #1a1a1a;
   --surface-soft: #2a2a2a;
-  --text: #ffffff;
+  --text: var(--text-on-dark);
   --muted: #b8b8b8;
   --border: #333333;
   --header: rgba(42, 42, 42, 0.96);
@@ -145,7 +151,7 @@ h3 {
   padding: 12px 18px;
   border-radius: 10px;
   color: #123b34;
-  background: #fff;
+  background: var(--surface-light-raised);
   box-shadow: var(--shadow-md);
   transform: translateY(-160%);
   transition: transform 160ms ease;
@@ -163,7 +169,7 @@ h3 {
 }
 
 :root[data-theme='dark'] .top-bar {
-  color: #fff;
+  color: var(--white);
   background: #167d7c;
 }
 
@@ -234,7 +240,7 @@ h3 {
   width: 52px;
   height: 52px;
   object-fit: contain;
-  border-radius: 14px;
+  border-radius: var(--brand-logo-radius);
 }
 
 .brand__text {
@@ -366,7 +372,7 @@ h3 {
 }
 
 .button--primary {
-  color: #fff;
+  color: var(--white);
   background: var(--teal-700);
   box-shadow: 0 10px 22px rgba(22, 127, 114, 0.2);
 }
@@ -377,7 +383,7 @@ h3 {
 
 .button--light {
   color: #123b34;
-  background: #fff;
+  background: var(--surface-light-raised);
   box-shadow: 0 10px 28px rgba(21, 80, 69, 0.2);
 }
 
@@ -386,13 +392,13 @@ h3 {
 }
 
 .button--secondary {
-  color: #fff;
+  color: var(--white);
   border-color: rgba(255, 255, 255, 0.7);
   background: rgba(255, 255, 255, 0.1);
 }
 
 .button--secondary:hover {
-  border-color: #fff;
+  border-color: var(--white);
   background: rgba(255, 255, 255, 0.18);
 }
 
@@ -465,7 +471,7 @@ h3 {
   isolation: isolate;
   min-height: 769px;
   overflow: hidden;
-  color: #fff;
+  color: var(--hero-foreground);
   background: linear-gradient(135deg, #95e1d3, #6dd6c2, #bdece3);
 }
 
@@ -529,7 +535,7 @@ h3 {
 }
 
 .eyebrow--light {
-  color: #fff;
+  color: var(--hero-foreground);
 }
 
 .section-kicker,
@@ -548,12 +554,12 @@ h3 {
 
 :root[data-theme='dark'] .section-kicker,
 :root[data-theme='dark'] .section-eyebrow {
-  color: #fff;
+  color: var(--white);
   background: #167d7c;
 }
 
 .section-kicker--light {
-  color: #fff;
+  color: var(--hero-foreground);
   background: rgba(255, 255, 255, 0.16);
 }
 
@@ -618,7 +624,7 @@ h3 {
   border: 2px solid rgba(255, 255, 255, 0.9);
   border-radius: 50%;
   color: var(--teal-700);
-  background: #fff;
+  background: var(--surface-light-raised);
 }
 
 .hero__avatars svg {
@@ -643,7 +649,7 @@ h3 {
   display: flex;
   gap: 2px;
   margin-bottom: 4px;
-  color: #fff;
+  color: var(--hero-foreground);
 }
 
 .stars svg {
@@ -681,7 +687,7 @@ h3 {
   padding: 24px;
   border-radius: 16px;
   color: var(--charcoal-950);
-  background: #fff;
+  background: var(--surface-light-raised);
   box-shadow: var(--shadow-md);
 }
 
@@ -877,7 +883,7 @@ h3 {
 }
 
 .founder-section {
-  background: linear-gradient(to bottom, #fafaf9, #fafaf9);
+  background: var(--surface-soft);
 }
 
 :root[data-theme='dark'] .founder-section {
@@ -965,7 +971,7 @@ h3 {
   min-height: 428px;
   padding-block: 64px;
   overflow: hidden;
-  color: #fff;
+  color: var(--hero-foreground);
   background: linear-gradient(135deg, #95e1d3, #6dd6c2);
   margin-bottom: 64px;
 }
@@ -998,7 +1004,7 @@ h3 {
   height: 80px;
   margin-bottom: 23px;
   place-items: center;
-  color: #fff;
+  color: var(--hero-foreground);
 }
 
 .final-cta__icon svg {
@@ -1039,6 +1045,11 @@ h3 {
   width: fit-content;
 }
 
+.brand__logo--footer {
+  width: 48px;
+  height: 48px;
+}
+
 .brand--footer .brand__text strong {
   color: var(--mint-300);
 }
@@ -1058,7 +1069,7 @@ h3 {
 
 .site-footer h2 {
   margin: 7px 0 19px;
-  color: #fff;
+  color: var(--text-on-dark);
   font-size: 1rem;
   letter-spacing: 0;
 }
@@ -1075,6 +1086,10 @@ h3 {
 .footer-contact a,
 .social-link {
   transition: color 160ms ease;
+}
+
+.site-footer__brand .social-link {
+  margin-top: 22px;
 }
 
 .footer-links a,
@@ -1154,9 +1169,9 @@ h3 {
   width: 58px;
   height: 58px;
   place-items: center;
-  border: 3px solid #fff;
+  border: 3px solid var(--white);
   border-radius: 50%;
-  color: #fff;
+  color: var(--white);
   background: #25d366;
   box-shadow: 0 12px 30px rgba(17, 90, 50, 0.34);
   transition: transform 180ms ease, box-shadow 180ms ease;
@@ -1168,7 +1183,7 @@ h3 {
   right: -1px;
   width: 13px;
   height: 13px;
-  border: 2px solid #fff;
+  border: 2px solid var(--white);
   border-radius: 50%;
   background: #ef4444;
   content: '';

@@ -1,0 +1,48 @@
+---
+import Button from '../../components/Button.astro';
+import Icon from '../../components/Icon.astro';
+import InternalHero from '../../components/InternalHero.astro';
+import { homeCareGuide } from '../../data/guides';
+import { pageMetadata } from '../../data/site';
+import { eventNames } from '../../lib/events';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const meta = pageMetadata.guide;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: meta.title,
+  description: meta.description,
+  inLanguage: 'pt-BR',
+};
+---
+
+<BaseLayout title={meta.title} description={meta.description} image="/images/og-senior-plus.jpg" structuredData={structuredData}>
+  <InternalHero
+    icon="clipboard-check"
+    title="Guia Prático do Cuidado Domiciliar"
+    lead="Conheça o material da Sênior Plus sobre cuidado domiciliar"
+  />
+
+  <section class="section page-section page-section--soft" aria-labelledby="guia-title">
+    <div class="container">
+      <article class="content-card guide-card">
+        <span class="card-icon"><Icon name="home-heart" size={32} /></span>
+        <h2 id="guia-title">{homeCareGuide.title}</h2>
+        <p>{homeCareGuide.description}</p>
+        <Button
+          href={homeCareGuide.salesPageUrl}
+          size="large"
+          target="_blank"
+          rel="noopener noreferrer"
+          dataEvent={eventNames.guideSalesPageClick}
+          dataLocation="guide"
+          dataCta="sales-page"
+          ariaLabel={`Acessar a página de vendas de ${homeCareGuide.title}`}
+        >
+          Conhecer o guia <Icon name="arrow-right" size={19} />
+        </Button>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

@@ -14,7 +14,7 @@ Também foram confirmados:
 
 - uso das marcas “Sênior Plus” e “Sênior+” com a lógica visual atual;
 - slogans “Cuidados com amor” e “Saúde de quem você mais ama em boas mãos”;
-- contatos de Annie Uno e Fabiano/Sênior Plus;
+- contato comercial institucional da Sênior Plus;
 - atendimento em São Paulo, capital, sem ampliação automática da área;
 - atendimento 24 horas, 7 dias por semana, inclusive feriados;
 - seis serviços atuais e suas descrições;
@@ -36,13 +36,13 @@ de supervisão autorizado passa a ser:
 > Esta coordenação garante que todos os cuidadores sigam os mais altos padrões de
 > qualidade e humanização no atendimento aos nossos clientes em São Paulo - SP.
 
-O escopo aprovado para a próxima implementação é somente a estrutura técnica, componentes compartilhados e Home completa. As páginas internas poderão existir apenas como stubs `noindex`, fora do sitemap. A área futura “Guias” receberá apenas tipos, dados desativados e documentação, sem rota pública nem item de menu.
+O escopo inicialmente aprovado para a próxima implementação era somente a estrutura técnica, componentes compartilhados e Home completa. As páginas internas poderiam existir apenas como stubs `noindex`, fora do sitemap.
 
 ### Atualização de implementação — páginas internas
 
 Em uma etapa posterior, foi aprovada a substituição dos stubs pelas seis páginas
-internas completas já levantadas neste plano. A área “Guias” continua desativada e
-sem rotas públicas; não houve publicação, analytics ou integração externa adicional.
+internas completas já levantadas neste plano. Em uma rodada posterior, foi autorizada
+a rota pública `/guia/`, com link para a página de vendas oficial e sem checkout próprio.
 
 ## 2. Cobertura da análise
 
@@ -64,7 +64,7 @@ A análise visual cobriu 1440 × 900, largura aproximada de 768 px e 390 × 844.
 
 ### Elementos compartilhados
 
-1. Faixa superior verde-petróleo com localidade, disponibilidade e dois telefones.
+1. Faixa superior verde-petróleo com localidade, disponibilidade e telefone institucional.
 2. Cabeçalho fixo no fluxo com logotipo, menu de sete itens, alternador de tema e CTA “Fale Conosco”.
 3. Conteúdo principal por rota.
 4. Botão flutuante circular de WhatsApp no canto inferior direito.
@@ -75,11 +75,11 @@ A análise visual cobriu 1440 × 900, largura aproximada de 768 px e 390 × 844.
 
 Ordem observada:
 
-1. Hero com selo “São Paulo - SP”, título “Saúde de quem você mais ama em boas mãos”, texto sobre 15 anos, CTAs para Annie e Serviços, avaliação visual e cartão “15+”.
+1. Hero com selo “São Paulo - SP”, título “Saúde de quem você mais ama em boas mãos”, texto sobre 15 anos, CTAs para a Sênior Plus e Serviços, avaliação visual e cartão “15+”.
 2. Quatro destaques: Consultoria Especializada, Acompanhamento Integral, Procedimentos de Enfermagem e Planos Flexíveis.
 3. Apresentação da fundadora Annie Uno, fotografia, credenciais e CTA para a história.
 4. Grade de seis benefícios.
-5. CTA final “Pronto para começar?” com WhatsApp de Annie e Fabiano.
+5. CTA final “Pronto para começar?” com WhatsApp institucional da Sênior Plus.
 
 ### Sobre
 
@@ -95,7 +95,7 @@ Ordem observada:
 3. Processo de seleção em seis etapas.
 4. Bloco de garantia de qualidade.
 5. Comunicação integrada por grupo de WhatsApp.
-6. CTA final com contatos de Annie e Fabiano.
+6. CTA final com contato institucional da Sênior Plus.
 
 ### Equipe
 
@@ -131,7 +131,7 @@ Ordem observada:
 ## 4. Comportamento funcional observado
 
 - As sete rotas internas funcionaram pelo menu e também carregaram em acesso direto após aguardar o JavaScript. Em uma primeira leitura automatizada rápida, as páginas internas chegaram a exibir apenas o selo Base44 antes da aplicação; um novo teste direto carregou o conteúdo completo após cerca de cinco segundos. Isso aponta para dependência de renderização no cliente e risco de conteúdo em branco durante carga lenta, não para um link interno definitivamente quebrado.
-- Os dois números de WhatsApp respondem: Annie é identificada como “Annie Uno”; o segundo número aparece como “Sênior Plus”. Confirmar se essa identificação é a desejada.
+- O contato comercial oficial é identificado como “Sênior Plus” e usa o telefone institucional confirmado.
 - Os telefones usam links `tel:` válidos.
 - A candidatura abre um Google Form, mas visitantes não autenticados foram redirecionados para a tela de login do Google. Isso é uma barreira funcional importante.
 - O formulário de contato tem validação HTML obrigatória e CTA “Enviar via WhatsApp”. Não há política de privacidade ou texto explicando o tratamento dos dados junto ao formulário.

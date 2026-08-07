@@ -1,11 +1,9 @@
 import type { Guide } from '../types/guide';
 
-/**
- * A área Guias permanece desativada até haver conteúdo, preço, checkout e
- * aprovação de publicação. Nenhum produto incompleto é exposto no site.
- */
-export const guidesFeature = {
-  enabled: false,
-} as const;
-
-export const guides: Guide[] = [];
+export const homeCareGuide: Guide = {
+  title: 'Guia Prático do Cuidado Domiciliar da Sênior Plus',
+  description:
+    'Um material da Sênior Plus com orientações práticas sobre o cuidado domiciliar.',
+  salesPageUrl:
+    'https://annie-uno.hotmart.host/vol1guiapraticodocuidadodomiciliar-seniorplus',
+};

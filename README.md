@@ -1,7 +1,7 @@
 # Sênior Plus
 
 Recriação independente do site institucional da Sênior Plus. O projeto contém a
-Home e as páginas Sobre, Serviços, Nossa Equipe, Avaliações, Contato e Carreiras,
+Home e as páginas Sobre, Serviços, Nossa Equipe, Avaliações, Contato, Guia e Carreiras,
 geradas estaticamente com Astro.
 
 ## Desenvolvimento local
@@ -29,21 +29,14 @@ A URL pública deve ser definida no futuro por `PUBLIC_SITE_URL`, conforme
 - `scripts/generate-sitemap.mjs` não cria o sitemap.
 
 Quando `PUBLIC_SITE_URL` estiver configurada, o build gera `dist/sitemap.xml` com as
-sete páginas públicas. A página 404 usa `noindex` e não entra no sitemap.
+oito páginas públicas. A página 404 usa `noindex` e não entra no sitemap.
 
-## Área futura “Guias”
+## Guia
 
-Os tipos estão em `src/types/guide.ts` e a lista central em `src/data/guides.ts`.
-`guidesFeature.enabled` está definido como `false` e `guides` começa vazio. Para uma
-etapa futura:
-
-1. cadastrar produtos com todos os campos confirmados;
-2. manter `published: false` até a aprovação individual;
-3. implementar `/guias` e `/guias/[slug]`;
-4. ativar a feature e adicionar “Guias” ao menu somente quando houver produto público;
-5. fornecer URLs de checkout reais e metadados próprios.
-
-Nenhum PDF completo, preço ou link de checkout foi incluído nesta etapa.
+Os dados do Guia Prático do Cuidado Domiciliar ficam centralizados em
+`src/data/guides.ts`. A rota pública `/guia/` apresenta o material e direciona para
+a página de vendas oficial. O site não hospeda PDF, não exibe preço e não implementa
+checkout próprio.
 
 ## Eventos de conversão
 
@@ -65,6 +58,6 @@ WhatsApp diretamente e o site não armazena mensagens.
 
 ## Formulário e Carreiras
 
-O formulário de contato valida os campos no navegador e abre o WhatsApp de Annie
+O formulário de contato valida os campos no navegador e abre o WhatsApp da Sênior Plus
 com a mensagem codificada. Nenhum dado é armazenado ou enviado a um backend. A
 página Carreiras mantém o Google Form original, inclusive sua autenticação externa.

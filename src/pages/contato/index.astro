@@ -15,26 +15,6 @@ const structuredData = { '@context': 'https://schema.org', '@type': 'ContactPage
 <BaseLayout title={meta.title} description={meta.description} image="/images/og-senior-plus.jpg" structuredData={structuredData}>
   <InternalHero icon="message-circle" title="Entre em Contato" lead="Estamos prontos para cuidar de quem você mais ama em São Paulo - SP. Fale conosco!" />
 
-  <section class="section page-section page-section--soft" aria-label="Informações de contato">
-    <div class="container contact-info-grid">
-      <article class="contact-info-card">
-        <span class="card-icon"><Icon name="phone" size={29} /></span><h2>Telefones</h2>
-        <p>Annie Uno</p><a href={`tel:${contacts.annie.phoneInternational}`} data-event={eventNames.phoneClick} data-contact="annie" data-location="contact-info">{contacts.annie.phoneDisplay}</a>
-        <p>Fabiano</p><a href={`tel:${contacts.fabiano.phoneInternational}`} data-event={eventNames.phoneClick} data-contact="fabiano" data-location="contact-info">{contacts.fabiano.phoneDisplay}</a>
-      </article>
-      <article class="contact-info-card">
-        <span class="card-icon"><Icon name="map-pin" size={29} /></span><h2>Localização</h2>
-        <strong>{brand.location}</strong>
-        <p class="contact-info-card__detail">Atendimento em {brand.serviceArea}.</p>
-      </article>
-      <article class="contact-info-card">
-        <span class="card-icon"><Icon name="clock" size={29} /></span><h2>Horário</h2>
-        <p>Atendimento</p><strong>24 horas por dia</strong>
-        <p>Disponibilidade</p><strong>7 dias por semana, incluindo feriados.</strong>
-      </article>
-    </div>
-  </section>
-
   <section class="section page-section" aria-label="Formulário e contatos rápidos">
     <div class="container contact-layout">
       <div class="contact-form-card">
@@ -47,14 +27,30 @@ const structuredData = { '@context': 'https://schema.org', '@type': 'ContactPage
         <span class="section-kicker">Atendimento Rápido</span>
         <h2 id="quick-contact-title">Prefere conversar agora?</h2>
         <p>Clique abaixo e fale diretamente conosco pelo WhatsApp</p>
-        <a class="quick-contact__link" href={buildWhatsAppUrl('annie', 'annie')} target="_blank" rel="noopener noreferrer" data-event={eventNames.whatsappAnnieClick} data-contact="annie" data-location="contact-quick">
-          <BrandIcon name="whatsapp" size={29} /><span><strong>Annie Uno</strong><small>{contacts.annie.phoneDisplay}</small><em>Fundadora & Enfermeira</em></span>
-        </a>
-        <a class="quick-contact__link" href={buildWhatsAppUrl('fabiano', 'fabiano')} target="_blank" rel="noopener noreferrer" data-event={eventNames.whatsappFabianoClick} data-contact="fabiano" data-location="contact-quick">
-          <BrandIcon name="whatsapp" size={29} /><span><strong>Fabiano</strong><small>{contacts.fabiano.phoneDisplay}</small><em>Atendimento</em></span>
+        <a class="quick-contact__link" href={buildWhatsAppUrl('seniorPlus', 'contact')} target="_blank" rel="noopener noreferrer" data-event={eventNames.whatsappSeniorPlusClick} data-contact="senior-plus" data-location="contact-quick">
+          <BrandIcon name="whatsapp" size={29} /><span><strong>Sênior Plus</strong><small>{contacts.seniorPlus.phoneDisplay}</small><em>Atendimento</em></span>
         </a>
         <div class="availability-card"><Icon name="clock" size={28} /><div><h3>Atendimento 24/7</h3><p>{brand.availability}</p></div></div>
       </aside>
+    </div>
+  </section>
+
+  <section class="section page-section page-section--soft" aria-label="Informações de contato">
+    <div class="container contact-info-grid">
+      <article class="contact-info-card">
+        <span class="card-icon"><Icon name="phone" size={29} /></span><h2>Telefone</h2>
+        <p>Sênior Plus</p><a href={`tel:${contacts.seniorPlus.phoneInternational}`} data-event={eventNames.phoneClick} data-contact="senior-plus" data-location="contact-info">{contacts.seniorPlus.phoneDisplay}</a>
+      </article>
+      <article class="contact-info-card">
+        <span class="card-icon"><Icon name="map-pin" size={29} /></span><h2>Localização</h2>
+        <strong>{brand.location}</strong>
+        <p class="contact-info-card__detail">Atendimento em {brand.serviceArea}.</p>
+      </article>
+      <article class="contact-info-card">
+        <span class="card-icon"><Icon name="clock" size={29} /></span><h2>Horário</h2>
+        <p>Atendimento</p><strong>24 horas por dia</strong>
+        <p>Disponibilidade</p><strong>7 dias por semana, incluindo feriados.</strong>
+      </article>
     </div>
   </section>
 </BaseLayout>

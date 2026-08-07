@@ -1,4 +1,4 @@
-export type ContactKey = 'annie' | 'fabiano';
+export type ContactKey = 'seniorPlus';
 
 export interface Contact {
   key: ContactKey;

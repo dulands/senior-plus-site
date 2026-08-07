@@ -22,17 +22,9 @@ export const brand = {
 } as const;
 
 export const contacts = {
-  annie: {
-    key: 'annie',
-    name: 'Annie Uno',
-    label: 'Annie Uno',
-    phoneDisplay: '(11) 98899-0401',
-    phoneInternational: '+5511988990401',
-    whatsappNumber: '5511988990401',
-  },
-  fabiano: {
-    key: 'fabiano',
-    name: 'Fabiano',
+  seniorPlus: {
+    key: 'seniorPlus',
+    name: 'Sênior Plus',
     label: 'Sênior Plus',
     phoneDisplay: '(11) 96285-0737',
     phoneInternational: '+5511962850737',
@@ -47,20 +39,19 @@ export const navigation: NavigationItem[] = [
   { label: 'Nossa Equipe', href: '/equipe/' },
   { label: 'Avaliações', href: '/avaliacoes/' },
   { label: 'Contato', href: '/contato/' },
+  { label: 'Guia', href: '/guia/' },
   { label: 'Carreiras', href: '/carreiras/' },
 ];
 
 export const whatsappMessages = {
   general:
-    'Olá! Gostaria de saber mais sobre os serviços da Sênior Plus em São Paulo.',
+    'Olá, Sênior Plus! Gostaria de saber mais sobre os serviços em São Paulo.',
   evaluation:
-    'Olá, Annie! Gostaria de solicitar uma avaliação e entender qual cuidado é mais adequado para minha família.',
+    'Olá, Sênior Plus! Gostaria de solicitar uma avaliação e entender qual cuidado é mais adequado para minha família.',
   services:
-    'Olá! Tenho interesse nos serviços da Sênior Plus e gostaria de receber mais informações.',
-  annie:
-    'Olá, Annie! Conheci a Sênior Plus pelo site e gostaria de conversar sobre atendimento.',
-  fabiano:
-    'Olá, Fabiano! Conheci a Sênior Plus pelo site e gostaria de mais informações.',
+    'Olá, Sênior Plus! Tenho interesse nos serviços e gostaria de receber mais informações.',
+  contact:
+    'Olá, Sênior Plus! Conheci o trabalho de vocês pelo site e gostaria de conversar sobre atendimento.',
 } as const;
 
 export const founder = {
@@ -77,6 +68,7 @@ export const founder = {
   ],
   supervisionText:
     'Toda nossa equipe trabalha sob a supervisão direta de Annie Uno, enfermeira com 15 anos de experiência, com pós-graduação em Gerontologia e Terapias Integrativas, além de MBA em Gestão Hospitalar. Esta coordenação garante que todos os cuidadores sigam os mais altos padrões de qualidade e humanização no atendimento aos nossos clientes em São Paulo - SP.',
+  linkedinUrl: 'https://www.linkedin.com/in/annieuno/',
 } as const;
 
 export const services: Service[] = [
@@ -256,7 +248,11 @@ export const pageMetadata = {
   },
   contact: {
     title: 'Contato | WhatsApp e telefone | Sênior Plus São Paulo',
-    description: 'Fale com Annie Uno ou Fabiano sobre cuidados para idosos em São Paulo. Atendimento 24 horas, todos os dias.',
+    description: 'Fale com a Sênior Plus sobre cuidados para idosos em São Paulo. Atendimento 24 horas, todos os dias.',
+  },
+  guide: {
+    title: 'Guia Prático do Cuidado Domiciliar | Sênior Plus',
+    description: 'Conheça o Guia Prático do Cuidado Domiciliar da Sênior Plus e acesse a página oficial do material.',
   },
   careers: {
     title: 'Trabalhe Conosco | Sênior Plus São Paulo',

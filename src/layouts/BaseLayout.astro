@@ -6,6 +6,7 @@ import Header from '../components/Header.astro';
 import SEO from '../components/SEO.astro';
 import TopBar from '../components/TopBar.astro';
 import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import 'lenis/dist/lenis.css';
 import '../styles/global.css';
 import '../styles/pages.css';
 
@@ -67,5 +68,8 @@ const { title, description, image, noindex, structuredData } = Astro.props;
     <Footer />
     <FloatingWhatsApp />
     <script is:inline set:html={eventsScript}></script>
+    <script>
+      import '../scripts/smooth-scroll';
+    </script>
   </body>
 </html>

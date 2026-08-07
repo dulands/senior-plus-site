@@ -8,7 +8,7 @@ if (!siteUrl) {
   process.exit(0);
 }
 
-const publicPaths = ['/', '/sobre/', '/servicos/', '/equipe/', '/avaliacoes/', '/contato/', '/carreiras/'];
+const publicPaths = ['/', '/sobre/', '/servicos/', '/equipe/', '/avaliacoes/', '/contato/', '/guia/', '/carreiras/'];
 const urls = publicPaths.map((pathname) => `  <url><loc>${siteUrl}${pathname}</loc></url>`).join('\n');
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

@@ -9,8 +9,7 @@ As confirmações abaixo foram fornecidas pela proprietária e substituem os blo
 - [x] Reprodução de todo o conteúdo do site original autorizada.
 - [x] Uso de “Sênior Plus”, “Sênior+” e dos dois slogans autorizado.
 - [x] Logotipo, fotografia de Annie e demais imagens/ativos do site original autorizados para hospedagem local.
-- [x] Annie Uno: `(11) 98899-0401` confirmado.
-- [x] Fabiano/Sênior Plus: `(11) 96285-0737` confirmado.
+- [x] Contato comercial único da Sênior Plus: `(11) 96285-0737` confirmado.
 - [x] Área de atendimento confirmada como São Paulo, capital; não ampliar para Grande São Paulo, outros municípios ou estado inteiro.
 - [x] Atendimento 24 horas, 7 dias por semana, inclusive feriados, confirmado.
 - [x] Os seis serviços e as descrições atuais da página Serviços foram confirmados.
@@ -25,7 +24,7 @@ As confirmações abaixo foram fornecidas pela proprietária e substituem os blo
 - [x] Contato comercial continuará pelo WhatsApp, sem banco, backend ou armazenamento.
 - [x] Google Form de carreiras e autenticação atual devem permanecer inalterados.
 
-Continuam pendentes para fases futuras: domínio próprio, e-mail profissional, dados empresariais não presentes no original, política de privacidade definitiva, configuração de analytics/anúncios e links/preços de produtos da futura área Guias.
+Continuam pendentes para fases futuras: dados empresariais não presentes no original, política de privacidade definitiva e configuração de analytics/anúncios.
 
 ## 1. Identidade empresarial
 
@@ -41,9 +40,7 @@ Continuam pendentes para fases futuras: domínio próprio, e-mail profissional, 
 
 ## 2. Contatos e atendimento
 
-- [ ] Annie Uno — telefone/WhatsApp `(11) 98899-0401` e autorização para publicação.
-- [ ] Fabiano — telefone/WhatsApp `(11) 96285-0737`, nome completo/cargo e autorização para publicação.
-- [ ] Confirmar se o segundo WhatsApp deve aparecer identificado como “Sênior Plus” ou “Fabiano”.
+- [x] Sênior Plus — telefone/WhatsApp comercial único `(11) 96285-0737` e autorização para publicação.
 - [ ] E-mail público da empresa; nenhum e-mail de contato é exibido atualmente.
 - [ ] Destino das mensagens do formulário de contato.
 - [ ] Mensagens iniciais desejadas para cada CTA de WhatsApp.
@@ -149,7 +146,7 @@ Continuam pendentes para fases futuras: domínio próprio, e-mail profissional, 
 - [ ] Proteção contra spam sem criar barreira excessiva.
 - [ ] Analytics desejado (se algum), responsável e política de consentimento.
 - [ ] Google Ads: conta, conversões desejadas e landing pages serão tratados somente em fase posterior.
-- [ ] Eventos de conversão desejados: clique no WhatsApp Annie, WhatsApp Fabiano, telefone, envio de contato e candidatura.
+- [ ] Eventos de conversão desejados: clique no WhatsApp Sênior Plus, telefone, envio de contato, acesso à página de vendas do guia e candidatura.
 - [ ] UTM e mensagem de WhatsApp não devem expor dados sensíveis.
 
 ## 10. Imagens e licenças

@@ -3,6 +3,12 @@ import { Image } from 'astro:assets';
 import annieImage from '../assets/images/annie-uno.png';
 import { founder } from '../data/site';
 import Icon from './Icon.astro';
+
+interface Props {
+  showHistoryLink?: boolean;
+}
+
+const { showHistoryLink = true } = Astro.props;
 ---
 
 <section class="section founder-section" aria-labelledby="annie-title">
@@ -31,9 +37,21 @@ import Icon from './Icon.astro';
       <ul class="check-list">
         {founder.credentials.map((credential) => <li><Icon name="check" size={18} /> {credential}</li>)}
       </ul>
-      <a class="text-link" href="/sobre/">
-        Conheça Nossa História <Icon name="arrow-right" size={18} />
-      </a>
+      <div class="founder-section__links">
+        {showHistoryLink && (
+          <a class="text-link" href="/sobre/">
+            Conheça Nossa História <Icon name="arrow-right" size={18} />
+          </a>
+        )}
+        <a
+          class="text-link"
+          href={founder.linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn de Annie Uno <Icon name="arrow-right" size={18} />
+        </a>
+      </div>
     </div>
   </div>
 </section>

@@ -59,7 +59,12 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 16px);
   background: var(--page);
+}
+
+html.lenis {
+  scroll-behavior: auto;
 }
 
 body {
@@ -907,6 +912,12 @@ h3 {
 
 .founder-section__lead {
   font-size: 1.1rem;
+}
+
+.founder-section__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
 }
 
 .check-list {

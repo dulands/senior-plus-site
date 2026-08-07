@@ -42,7 +42,7 @@ const year = new Date().getFullYear();
     <div>
       <h2>Navegação</h2>
       <ul class="footer-links">
-        {navigation.slice(0, 6).map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+        {navigation.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
       </ul>
     </div>
     <div>
@@ -59,26 +59,15 @@ const year = new Date().getFullYear();
       <address class="footer-contact">
         <span><Icon name="map-pin" size={18} /> {brand.location}</span>
         <a
-          href={buildWhatsAppUrl('annie', 'annie')}
+          href={buildWhatsAppUrl('seniorPlus', 'contact')}
           target="_blank"
           rel="noopener noreferrer"
-          data-event={eventNames.whatsappAnnieClick}
-          data-contact="annie"
+          data-event={eventNames.whatsappSeniorPlusClick}
+          data-contact="senior-plus"
           data-location="footer"
         >
           <Icon name="phone" size={18} />
-          Annie: {contacts.annie.phoneDisplay}
-        </a>
-        <a
-          href={buildWhatsAppUrl('fabiano', 'fabiano')}
-          target="_blank"
-          rel="noopener noreferrer"
-          data-event={eventNames.whatsappFabianoClick}
-          data-contact="fabiano"
-          data-location="footer"
-        >
-          <Icon name="phone" size={18} />
-          Fabiano: {contacts.fabiano.phoneDisplay}
+          Sênior Plus: {contacts.seniorPlus.phoneDisplay}
         </a>
       </address>
     </div>

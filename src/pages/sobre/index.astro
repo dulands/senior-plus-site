@@ -1,5 +1,6 @@
 ---
 import Icon from '../../components/Icon.astro';
+import FounderSection from '../../components/FounderSection.astro';
 import InternalHero from '../../components/InternalHero.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 import { aboutDifferentials, aboutValues } from '../../data/pages';
@@ -12,6 +13,8 @@ const structuredData = { '@context': 'https://schema.org', '@type': 'AboutPage',
 
 <BaseLayout title={meta.title} description={meta.description} image="/images/og-senior-plus.jpg" structuredData={structuredData}>
   <InternalHero title="Nossa História" lead="Nascemos da paixão pelo cuidado humanizado e do compromisso com a qualidade de vida dos idosos em São Paulo - SP" />
+
+  <FounderSection showHistoryLink={false} />
 
   <section class="section page-section" aria-label="Missão e visão">
     <div class="container two-card-grid">

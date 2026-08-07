@@ -309,6 +309,25 @@
   text-align: center;
 }
 
+.guide-card {
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.guide-card .card-icon {
+  margin-inline: auto;
+}
+
+.guide-card p {
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+.guide-card .button {
+  margin-top: 0.5rem;
+}
+
 .service-detail-card {
   position: relative;
   min-height: 490px;

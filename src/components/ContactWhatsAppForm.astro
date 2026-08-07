@@ -4,7 +4,7 @@ import { eventNames } from '../lib/events';
 import BrandIcon from './BrandIcon.astro';
 ---
 
-<form class="contact-form" data-contact-form data-whatsapp-number={contacts.annie.whatsappNumber} novalidate>
+<form class="contact-form" data-contact-form data-whatsapp-number={contacts.seniorPlus.whatsappNumber} novalidate>
   <div class="form-field">
     <label for="contact-name">Nome Completo <span aria-hidden="true">*</span></label>
     <input id="contact-name" name="name" type="text" autocomplete="name" required minlength="2" placeholder="Seu nome" />
@@ -25,7 +25,7 @@ import BrandIcon from './BrandIcon.astro';
     class="button button--primary button--large contact-form__submit"
     type="submit"
     data-submit-event={eventNames.contactWhatsAppSubmit}
-    data-contact="annie"
+    data-contact="senior-plus"
     data-location="contact-form"
     data-cta="send-whatsapp"
   >
@@ -58,7 +58,7 @@ import BrandIcon from './BrandIcon.astro';
 
       const data = new FormData(form);
       const message = [
-        'Olá, Annie! Gostaria de entrar em contato com a Sênior Plus.',
+        'Olá, Sênior Plus! Gostaria de entrar em contato.',
         '',
         `Nome: ${String(data.get('name') || '').trim()}`,
         `Email: ${String(data.get('email') || '').trim()}`,
@@ -74,7 +74,7 @@ import BrandIcon from './BrandIcon.astro';
       }).SeniorPlusEvents;
       if (eventName) {
         eventLayer?.track(eventName, {
-          contact: 'annie',
+          contact: 'senior-plus',
           location: 'contact-form',
           cta: 'send-whatsapp',
         });

@@ -24,8 +24,8 @@ const structuredData = { '@context': 'https://schema.org', '@type': 'ContactPage
       </article>
       <article class="contact-info-card">
         <span class="card-icon"><Icon name="map-pin" size={29} /></span><h2>Localização</h2>
-        <p>Atendemos em</p><strong>{brand.location}</strong>
-        <p>Área de atendimento</p><strong>{brand.serviceArea}</strong>
+        <strong>{brand.location}</strong>
+        <p class="contact-info-card__detail">Atendimento em {brand.serviceArea}.</p>
       </article>
       <article class="contact-info-card">
         <span class="card-icon"><Icon name="clock" size={29} /></span><h2>Horário</h2>

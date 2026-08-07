@@ -869,6 +869,14 @@
   text-transform: uppercase;
 }
 
+.contact-info-card .contact-info-card__detail {
+  margin-top: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-transform: none;
+}
+
 .contact-info-card a,
 .contact-info-card strong {
   display: inline-flex;

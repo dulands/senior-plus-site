@@ -292,6 +292,17 @@ h3 {
   white-space: nowrap;
 }
 
+.site-header__desktop-nav .navigation ul {
+  gap: 8px;
+}
+
+.site-header__desktop-nav .navigation a {
+  padding-inline: 10px;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
 .navigation a:hover,
 .navigation a.active {
   color: var(--teal-700);
